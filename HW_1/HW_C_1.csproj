@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Exercise_1.cs" />
+    <Compile Remove="Exercise_2.cs" />
+    <Compile Remove="Exercise_3.cs" />
+    <Compile Remove="Exercise_4.cs" />
+    <Compile Remove="Exercise_5.cs" />
+    <Compile Remove="Exercise_6.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Exercise_1.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <None Include="Exercise_2.cs" />
+    <None Include="Exercise_3.cs" Condition=" '$(EnableDefaultCompileItems)' == 'true' " />
+    <None Include="Exercise_4.cs" />
+    <None Include="Exercise_5.cs" />
+    <None Include="Exercise_6.cs" />
+  </ItemGroup>
+</Project>
