@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/laskav/Documents/HW_C#/HW_2/HW_2/HW_2.csproj": {}
+    "/Users/laskav/Projects/HW_C.Sharp/HW_2/HW_2/HW_2.csproj": {}
   },
   "projects": {
-    "/Users/laskav/Documents/HW_C#/HW_2/HW_2/HW_2.csproj": {
+    "/Users/laskav/Projects/HW_C.Sharp/HW_2/HW_2/HW_2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/laskav/Documents/HW_C#/HW_2/HW_2/HW_2.csproj",
+        "projectUniqueName": "/Users/laskav/Projects/HW_C.Sharp/HW_2/HW_2/HW_2.csproj",
         "projectName": "HW_2",
-        "projectPath": "/Users/laskav/Documents/HW_C#/HW_2/HW_2/HW_2.csproj",
+        "projectPath": "/Users/laskav/Projects/HW_C.Sharp/HW_2/HW_2/HW_2.csproj",
         "packagesPath": "/Users/laskav/.nuget/packages/",
-        "outputPath": "/Users/laskav/Documents/HW_C#/HW_2/HW_2/obj/",
+        "outputPath": "/Users/laskav/Projects/HW_C.Sharp/HW_2/HW_2/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/laskav/.nuget/NuGet/NuGet.Config"
@@ -53,7 +53,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.201/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.202/RuntimeIdentifierGraph.json"
         }
       }
     }
