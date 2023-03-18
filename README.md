@@ -1,1 +1,1 @@
-# КУРС: «ПЛАТФОРМА MICROSOFT .NET И ЯЗЫК ПРОГРАММИРОВАНИЯ C#
+# COURSE: “MICROSOFT .NET PLATFORM AND C# PROGRAMMING LANGUAGE
