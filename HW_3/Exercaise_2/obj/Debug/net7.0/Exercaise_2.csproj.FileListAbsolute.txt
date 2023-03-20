@@ -1,0 +1,15 @@
+/Users/laskav/Projects/HW_C.Sharp/HW_3/Exercaise_2/bin/Debug/net7.0/Exercaise_2
+/Users/laskav/Projects/HW_C.Sharp/HW_3/Exercaise_2/bin/Debug/net7.0/Exercaise_2.deps.json
+/Users/laskav/Projects/HW_C.Sharp/HW_3/Exercaise_2/bin/Debug/net7.0/Exercaise_2.runtimeconfig.json
+/Users/laskav/Projects/HW_C.Sharp/HW_3/Exercaise_2/bin/Debug/net7.0/Exercaise_2.dll
+/Users/laskav/Projects/HW_C.Sharp/HW_3/Exercaise_2/bin/Debug/net7.0/Exercaise_2.pdb
+/Users/laskav/Projects/HW_C.Sharp/HW_3/Exercaise_2/obj/Debug/net7.0/Exercaise_2.csproj.AssemblyReference.cache
+/Users/laskav/Projects/HW_C.Sharp/HW_3/Exercaise_2/obj/Debug/net7.0/Exercaise_2.GeneratedMSBuildEditorConfig.editorconfig
+/Users/laskav/Projects/HW_C.Sharp/HW_3/Exercaise_2/obj/Debug/net7.0/Exercaise_2.AssemblyInfoInputs.cache
+/Users/laskav/Projects/HW_C.Sharp/HW_3/Exercaise_2/obj/Debug/net7.0/Exercaise_2.AssemblyInfo.cs
+/Users/laskav/Projects/HW_C.Sharp/HW_3/Exercaise_2/obj/Debug/net7.0/Exercaise_2.csproj.CoreCompileInputs.cache
+/Users/laskav/Projects/HW_C.Sharp/HW_3/Exercaise_2/obj/Debug/net7.0/Exercaise_2.dll
+/Users/laskav/Projects/HW_C.Sharp/HW_3/Exercaise_2/obj/Debug/net7.0/refint/Exercaise_2.dll
+/Users/laskav/Projects/HW_C.Sharp/HW_3/Exercaise_2/obj/Debug/net7.0/Exercaise_2.pdb
+/Users/laskav/Projects/HW_C.Sharp/HW_3/Exercaise_2/obj/Debug/net7.0/Exercaise_2.genruntimeconfig.cache
+/Users/laskav/Projects/HW_C.Sharp/HW_3/Exercaise_2/obj/Debug/net7.0/ref/Exercaise_2.dll
