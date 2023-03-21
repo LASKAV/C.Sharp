@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/laskav/Documents/HW_C#/HW_C.Sharp/HW_3/Exercaise_3/Exercaise_3.csproj",
-      "projectName": "Exercaise_3",
-      "projectPath": "/Users/laskav/Documents/HW_C#/HW_C.Sharp/HW_3/Exercaise_3/Exercaise_3.csproj",
+      "projectUniqueName": "/Users/laskav/Documents/HW_C#/HW_C.Sharp/HW_3/Exercaise_4/Exercaise_4.csproj",
+      "projectName": "Exercaise_4",
+      "projectPath": "/Users/laskav/Documents/HW_C#/HW_C.Sharp/HW_3/Exercaise_4/Exercaise_4.csproj",
       "packagesPath": "/Users/laskav/.nuget/packages/",
-      "outputPath": "/Users/laskav/Documents/HW_C#/HW_C.Sharp/HW_3/Exercaise_3/obj/",
+      "outputPath": "/Users/laskav/Documents/HW_C#/HW_C.Sharp/HW_3/Exercaise_4/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/laskav/.nuget/NuGet/NuGet.Config"

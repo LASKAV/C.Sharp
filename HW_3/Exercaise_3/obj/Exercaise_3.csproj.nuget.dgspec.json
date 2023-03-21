@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/laskav/Projects/HW_C.Sharp/HW_3/Exercaise_3/Exercaise_3.csproj": {}
+    "/Users/laskav/Documents/HW_C#/HW_C.Sharp/HW_3/Exercaise_3/Exercaise_3.csproj": {}
   },
   "projects": {
-    "/Users/laskav/Projects/HW_C.Sharp/HW_3/Exercaise_3/Exercaise_3.csproj": {
+    "/Users/laskav/Documents/HW_C#/HW_C.Sharp/HW_3/Exercaise_3/Exercaise_3.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/laskav/Projects/HW_C.Sharp/HW_3/Exercaise_3/Exercaise_3.csproj",
+        "projectUniqueName": "/Users/laskav/Documents/HW_C#/HW_C.Sharp/HW_3/Exercaise_3/Exercaise_3.csproj",
         "projectName": "Exercaise_3",
-        "projectPath": "/Users/laskav/Projects/HW_C.Sharp/HW_3/Exercaise_3/Exercaise_3.csproj",
+        "projectPath": "/Users/laskav/Documents/HW_C#/HW_C.Sharp/HW_3/Exercaise_3/Exercaise_3.csproj",
         "packagesPath": "/Users/laskav/.nuget/packages/",
-        "outputPath": "/Users/laskav/Projects/HW_C.Sharp/HW_3/Exercaise_3/obj/",
+        "outputPath": "/Users/laskav/Documents/HW_C#/HW_C.Sharp/HW_3/Exercaise_3/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/laskav/.nuget/NuGet/NuGet.Config"
