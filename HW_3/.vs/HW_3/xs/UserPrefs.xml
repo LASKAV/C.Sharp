@@ -1,9 +1,10 @@
-﻿<Properties StartupConfiguration="{6286D45B-6C2F-4852-B0F7-806BA43292D6}|Default">
-  <MonoDevelop.Ide.ItemProperties.Exercaise__5 FirstBuild="True" />
+﻿<Properties StartupConfiguration="{63FA9C59-CB20-4CD7-BDC7-BBD02F0A7EA8}|Default">
+  <MonoDevelop.Ide.ItemProperties.Exercaise__5 PreferredExecutionTarget="MonoDevelop.Default" />
   <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.Exercaise__3 PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.ItemProperties.Exercaise__4 PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.ItemProperties.Exercaise__6 FirstBuild="True" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.DebuggingService.Breakpoints />
   <MonoDevelop.Ide.Workbench ActiveDocument="Exercaise_4/Program.cs">

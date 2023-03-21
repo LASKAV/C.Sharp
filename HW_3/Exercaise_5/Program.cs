@@ -69,7 +69,7 @@ class Magazine
     {
         return string.Format
             (
-            $"\nWebsite" +
+            $"\nMagazine" +
             $"\nName: {name}" +
             $"\nyear: {year}" +
             $"\nTittle: {tittle}" +
