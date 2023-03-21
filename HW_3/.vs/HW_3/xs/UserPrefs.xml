@@ -1,6 +1,26 @@
 ﻿<Properties StartupConfiguration="{FA52C351-5E30-4971-A4A0-536C13AD13A6}|Default">
   <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.Exercaise__3 PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.ItemProperties.Exercaise__4 FirstBuild="True" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Exercaise_4/Program.cs">
+    <Files>
+      <File FileName="Exercaise_3/Program.cs" Line="1" Column="1" />
+      <File FileName="Exercaise_4/Program.cs" Line="11" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="HW_3" expanded="True">
+            <Node name="Exercaise_4" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.Exercaise__1 PreferredExecutionTarget="MonoDevelop.Default" />
 </Properties>
