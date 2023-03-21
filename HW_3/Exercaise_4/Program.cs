@@ -52,13 +52,13 @@ class Website
         Console.Write("Введите tittle: "); tittle = Console.ReadLine();
         Console.Write("Введите ip: "); ip = Console.ReadLine();
     }
-    public void upp_ip()
+    public void upp_ip(string ip)
     {
-        string ip = this.ip;
+        this.ip = ip;
     }
-    public void upp_name()
+    public void upp_name(string name)
     {
-        string name = this.name;
+        this.name = name;
     }
     public override string ToString()
     {

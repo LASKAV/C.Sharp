@@ -1,0 +1,15 @@
+/Users/laskav/Documents/HW_C#/HW_C.Sharp/HW_3/Exercaise_5/bin/Debug/net7.0/Exercaise_5
+/Users/laskav/Documents/HW_C#/HW_C.Sharp/HW_3/Exercaise_5/bin/Debug/net7.0/Exercaise_5.deps.json
+/Users/laskav/Documents/HW_C#/HW_C.Sharp/HW_3/Exercaise_5/bin/Debug/net7.0/Exercaise_5.runtimeconfig.json
+/Users/laskav/Documents/HW_C#/HW_C.Sharp/HW_3/Exercaise_5/bin/Debug/net7.0/Exercaise_5.dll
+/Users/laskav/Documents/HW_C#/HW_C.Sharp/HW_3/Exercaise_5/bin/Debug/net7.0/Exercaise_5.pdb
+/Users/laskav/Documents/HW_C#/HW_C.Sharp/HW_3/Exercaise_5/obj/Debug/net7.0/Exercaise_5.csproj.AssemblyReference.cache
+/Users/laskav/Documents/HW_C#/HW_C.Sharp/HW_3/Exercaise_5/obj/Debug/net7.0/Exercaise_5.GeneratedMSBuildEditorConfig.editorconfig
+/Users/laskav/Documents/HW_C#/HW_C.Sharp/HW_3/Exercaise_5/obj/Debug/net7.0/Exercaise_5.AssemblyInfoInputs.cache
+/Users/laskav/Documents/HW_C#/HW_C.Sharp/HW_3/Exercaise_5/obj/Debug/net7.0/Exercaise_5.AssemblyInfo.cs
+/Users/laskav/Documents/HW_C#/HW_C.Sharp/HW_3/Exercaise_5/obj/Debug/net7.0/Exercaise_5.csproj.CoreCompileInputs.cache
+/Users/laskav/Documents/HW_C#/HW_C.Sharp/HW_3/Exercaise_5/obj/Debug/net7.0/Exercaise_5.dll
+/Users/laskav/Documents/HW_C#/HW_C.Sharp/HW_3/Exercaise_5/obj/Debug/net7.0/refint/Exercaise_5.dll
+/Users/laskav/Documents/HW_C#/HW_C.Sharp/HW_3/Exercaise_5/obj/Debug/net7.0/Exercaise_5.pdb
+/Users/laskav/Documents/HW_C#/HW_C.Sharp/HW_3/Exercaise_5/obj/Debug/net7.0/Exercaise_5.genruntimeconfig.cache
+/Users/laskav/Documents/HW_C#/HW_C.Sharp/HW_3/Exercaise_5/obj/Debug/net7.0/ref/Exercaise_5.dll
