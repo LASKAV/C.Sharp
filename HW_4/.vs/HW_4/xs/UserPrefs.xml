@@ -1,5 +1,22 @@
-﻿<Properties StartupConfiguration="{E369DB24-DCA1-43B9-9128-988020CBAD2A}|Default">
+﻿<Properties StartupConfiguration="{882FC3B2-BE86-46FF-8908-2CF889E11958}|Default">
   <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.ItemProperties.Exercaise__2 PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.ItemProperties.Exercaise__1 FirstBuild="True" />
+  <MonoDevelop.Ide.ItemProperties.Exercaise__1 PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Exercaise_2/Program.cs">
+    <Files>
+      <File FileName="../Exercaise_2/Program.cs" Line="8" Column="6" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="HW_4" expanded="True" selected="True" />
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
 </Properties>
