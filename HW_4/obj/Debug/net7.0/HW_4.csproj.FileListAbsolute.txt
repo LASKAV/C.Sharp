@@ -1,0 +1,5 @@
+/Users/laskav/Documents/HW_C#/HW_C.Sharp/HW_4/obj/Debug/net7.0/HW_4.csproj.AssemblyReference.cache
+/Users/laskav/Documents/HW_C#/HW_C.Sharp/HW_4/obj/Debug/net7.0/HW_4.GeneratedMSBuildEditorConfig.editorconfig
+/Users/laskav/Documents/HW_C#/HW_C.Sharp/HW_4/obj/Debug/net7.0/HW_4.AssemblyInfoInputs.cache
+/Users/laskav/Documents/HW_C#/HW_C.Sharp/HW_4/obj/Debug/net7.0/HW_4.AssemblyInfo.cs
+/Users/laskav/Documents/HW_C#/HW_C.Sharp/HW_4/obj/Debug/net7.0/HW_4.csproj.CoreCompileInputs.cache
