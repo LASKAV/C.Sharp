@@ -1,5 +1,26 @@
-﻿<Properties StartupConfiguration="{A1164F71-B86C-45B3-8BCA-FA9683C8CD14}|Default">
+﻿<Properties StartupConfiguration="{22E58FEA-29D3-412B-AEE0-3CFFBDAB6B20}|Default">
   <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.ItemProperties.Exercaise__1 PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.ItemProperties.Exercaise__2 FirstBuild="True" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.Exercaise__2 FirstBuild="True" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workbench ActiveDocument="../Exercaise_2/Program.cs">
+    <Files>
+      <File FileName="Program.cs" Line="7" Column="24" />
+      <File FileName="../Exercaise_2/Program.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Exercaise_1" expanded="True" selected="True">
+            <Node name="Exercaise_1" expanded="True" />
+            <Node name="Exercaise_2" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
 </Properties>
