@@ -13,9 +13,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/laskav/Documents/HW_C#/HW_C.Sharp/HW_4/test/test.csproj",
-      "projectName": "test",
-      "projectPath": "/Users/laskav/Documents/HW_C#/HW_C.Sharp/HW_4/test/test.csproj",
+      "projectUniqueName": "/Users/laskav/Documents/HW_C#/HW_C.Sharp/HW_4/test/Exercise_1.csproj",
+      "projectName": "Exercise_1",
+      "projectPath": "/Users/laskav/Documents/HW_C#/HW_C.Sharp/HW_4/test/Exercise_1.csproj",
       "packagesPath": "/Users/laskav/.nuget/packages/",
       "outputPath": "/Users/laskav/Documents/HW_C#/HW_C.Sharp/HW_4/test/obj/",
       "projectStyle": "PackageReference",
