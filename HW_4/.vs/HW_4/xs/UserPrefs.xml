@@ -1,18 +1,7 @@
-﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State name="__root__">
-          <Node name="HW_4" expanded="True" />
-        </State>
-      </Pad>
-    </Pads>
-  </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.HW__4 PreferredExecutionTarget="MonoDevelop.Default" FirstBuild="True" />
+﻿<Properties StartupConfiguration="{0B70A079-475F-4F3E-AE9E-A931074C7916}|Default">
+  <MonoDevelop.Ide.ItemProperties.Exercise__4 FirstBuild="True" />
+  <MonoDevelop.Ide.ItemProperties.Exercise__1 PreferredExecutionTarget="MonoDevelop.Default" FirstBuild="True" />
+  <MonoDevelop.Ide.ItemProperties.Exercise__2 FirstBuild="True" />
+  <MonoDevelop.Ide.ItemProperties.Exercise__3 FirstBuild="True" />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
 </Properties>
