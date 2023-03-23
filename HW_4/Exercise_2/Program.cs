@@ -27,6 +27,7 @@ class Program
             ["nine"] = 9,
         };
         // Dictionary словарь key,val
+
         foreach (KeyValuePair<string, int> keyValue in _Dict)
         {
             Console.WriteLine(keyValue.Key + " = " + keyValue.Value);
