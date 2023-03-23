@@ -1,5 +1,4 @@
 ﻿namespace Exercise_2;
-
 using System.Collections;
 using System.Collections.Generic;
 
@@ -27,7 +26,13 @@ class Program
             ["eight"] = 8,
             ["nine"] = 9,
         };
-        // Dictionary словарь key,val 
+        // Dictionary словарь key,val
+        foreach (KeyValuePair<string, int> keyValue in _Dict)
+        {
+            Console.WriteLine(keyValue.Key + " = " + keyValue.Value);
+        }
+
+
         Console.WriteLine("Введите словами цифру от 0 до 9");
         string num_str = Console.ReadLine();
         Console.WriteLine(_Dict[num_str]);
