@@ -26,9 +26,9 @@ class Program
         {
             Console.WriteLine("Ошибка: неверный формат выражения");
         }
-        catch (ArgumentException e)
+        catch (ArgumentException ex)
         {
-            Console.WriteLine($"Ошибка: {e.Message}");
+            Console.WriteLine($"Ошибка: {ex.Message}");
         }
         Console.Read();
     }

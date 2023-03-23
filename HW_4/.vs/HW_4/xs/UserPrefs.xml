@@ -1,7 +1,28 @@
-﻿<Properties StartupConfiguration="{0B70A079-475F-4F3E-AE9E-A931074C7916}|Default">
-  <MonoDevelop.Ide.ItemProperties.Exercise__4 FirstBuild="True" />
-  <MonoDevelop.Ide.ItemProperties.Exercise__1 PreferredExecutionTarget="MonoDevelop.Default" FirstBuild="True" />
-  <MonoDevelop.Ide.ItemProperties.Exercise__2 FirstBuild="True" />
-  <MonoDevelop.Ide.ItemProperties.Exercise__3 FirstBuild="True" />
+﻿<Properties StartupConfiguration="{65EE2839-D261-443D-AC02-6151A7675776}|Default">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Exercise__4 PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Exercise_4/Program.cs">
+    <Files>
+      <File FileName="Exercise_2/Program.cs" Line="35" Column="1" />
+      <File FileName="Exercise_3/Program.cs" Line="24" Column="38" />
+      <File FileName="Exercise_4/Program.cs" Line="30" Column="10" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="HW_4" expanded="True">
+            <Node name="Exercise_4" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.Exercise__1 PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.ItemProperties.Exercise__2 PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.Exercise__3 PreferredExecutionTarget="MonoDevelop.Default" />
   <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
 </Properties>
