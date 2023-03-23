@@ -21,6 +21,7 @@ class Program
     {
         Foreign_passport _passport = new Foreign_passport();
         _passport.Input_Foreign();
+        Console.WriteLine(_passport);
         Console.Read();
     }
 }
