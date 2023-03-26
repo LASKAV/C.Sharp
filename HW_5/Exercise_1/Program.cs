@@ -1,6 +1,4 @@
-﻿using System.Threading;
-
-namespace Exercise_1;
+﻿namespace Exercise_1;
 
 /*
                             Задание 1
@@ -26,9 +24,9 @@ class Program
         Console.WriteLine(_magazine_one);
         _magazine_two += 8;
         if (_magazine_one == _magazine_two)
-            Console.WriteLine("Количество сотрудников совподает");
+            Console.WriteLine("Количество сотрудников совпадает");
         else
-            Console.WriteLine("Количество не совподает");
+            Console.WriteLine("Количество не совпадает");
         Console.Read();
     }
 }
@@ -114,6 +112,29 @@ class Magazine
             return true;
         else
             return false;
+    }
+    public static bool operator >(Magazine left, Magazine right)
+    {
+        if (left.employee > right.employee)
+            return true;
+        else
+            return false;
+    }
+    public static bool operator <(Magazine left, Magazine right)
+    {
+        if (left.employee < right.employee)
+            return true;
+        else
+            return false;
+    }
+    public override bool Equals(object obj)
+    {
+        if (obj == null || GetType() != obj.GetType())
+        {
+            return false;
+        }
+        Magazine other = (Magazine)obj;
+        return employee == other.employee;
     }
 }
 
