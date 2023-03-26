@@ -35,7 +35,6 @@ class Program
         if (_store_one != _store_two) Console.WriteLine("_store_one != _store_two - True");
         else Console.WriteLine("_store_one > _store_two - Folse");
         Console.Read();
-        
     }
 }
 
