@@ -23,10 +23,18 @@ class Program
         Console.WriteLine(_magazine_one);
         Console.WriteLine(_magazine_one);
         _magazine_two += 8;
-        if (_magazine_one == _magazine_two)
-            Console.WriteLine("Количество сотрудников совпадает");
-        else
-            Console.WriteLine("Количество не совпадает");
+        if (_magazine_one == _magazine_two) Console.WriteLine("Площади совпадают");
+        else Console.WriteLine("Площади не совпадают");
+        if (_magazine_one > _magazine_two) Console.WriteLine("_store_one > _store_two - True");
+        else Console.WriteLine("_store_one > _store_two - Folse");
+        if (_magazine_one < _magazine_two) Console.WriteLine("_store_one < _store_two - True");
+        else Console.WriteLine("_store_one < _store_two - Folse");
+        if (_magazine_one > _magazine_two) Console.WriteLine("_store_one > _store_two - True");
+        else Console.WriteLine("_store_one > _store_two - Folse");
+        if (_magazine_one < _magazine_two) Console.WriteLine("_store_one < _store_two - True");
+        else Console.WriteLine("_store_one > _store_two - Folse");
+        if (_magazine_one != _magazine_two) Console.WriteLine("_store_one != _store_two - True");
+        else Console.WriteLine("_store_one > _store_two - Folse");
         Console.Read();
     }
 }
