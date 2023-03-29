@@ -1,13 +1,13 @@
-﻿namespace Exercise_1;
+﻿namespace Exercise_2;
 
 /*
-                                Задание 1
-Создайте интерфейс ICalc. В нём должно быть два метода:
-■ intLess(int valueToCompare) — возвращает количество значений меньших, чем valueToCompare;
-■ intGreater(int valueToCompare) — возвращает количество значений больших, чем valueToCompare.
-Класс, созданный ранее в практическом задании Array, должен имплементировать интерфейс ICalc.
-Метод Less — возвращает количество элементов массива меньших, чем valueToCompare.
-Метод Greater — возвращает количество элементов массива больших, чем valueToCompare.
+                        Задание 2
+Создайте интерфейс IOutput2. В нём должно быть два метода:
+■ void ShowEven() — отображает четные значения из контейнера с данными;
+■ void ShowOdd() — отображает нечетные значения из контейнера с данными.
+Класс, созданный ранее в практическом задании Array, должен имплементировать интерфейс IOutput2.
+Метод ShowEven — отображает четные значения из массива.
+Метод ShowOdd — отображает нечетные значения из массива.
 Напишите код для тестирования полученной функциональности.
  */
 
@@ -16,15 +16,16 @@ class Program
     static void Main(string[] args)
     {
         Array _array = new Array();
-        IOutput output = _array;
-        output.Show();
-       //Console.WriteLine("\nvalueToCompare > Array: " + _array.Less(5));
-       //Console.WriteLine("\nvalueToCompare < Array: " + _array.Greater(5));
-        ICalc calc = _array;
-        Console.WriteLine("\nvalueToCompare > Array: " + calc.Less(5));
-        Console.WriteLine("\nvalueToCompare < Array: " + calc.Greater(5));
+        IOutput2 output2 = _array;
+        output2.ShowEven();
+        output2.ShowOdd();
         Console.Read();
     }
+}
+interface IOutput2
+{
+    void ShowEven();
+    void ShowOdd();
 }
 interface IOutput
 {
@@ -36,7 +37,7 @@ interface ICalc
     int Less(int valueToCompare);
     int Greater(int valueToCompare);
 }
-class Array : ICalc, IOutput
+class Array : ICalc, IOutput , IOutput2
 {
     int[] _arr;
     public Array()
@@ -90,5 +91,28 @@ class Array : ICalc, IOutput
             }
         }
         return rezalt;
+    }
+    public void ShowEven()
+    {
+        Console.Write("ShowEven: ");
+        foreach (int item in _arr)
+        {
+            if((item % 2) == 0)
+            {
+
+                Console.Write($"{item}" + " ");
+            }
+        }
+    }
+    public void ShowOdd()
+    {
+        Console.Write("\nShowOdd: ");
+        foreach (int item in _arr)
+        {
+            if ((item % 2) != 0)
+            {
+                Console.Write($"{item}" + " ");
+            }
+        }
     }
 }
