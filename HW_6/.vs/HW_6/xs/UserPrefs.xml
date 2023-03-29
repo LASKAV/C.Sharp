@@ -2,30 +2,28 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.Exercise__4 PreferredExecutionTarget="MonoDevelop.Default" FirstBuild="True" />
-  <MonoDevelop.Ide.ItemProperties.Exercise__2 PreferredExecutionTarget="MonoDevelop.Default" />
-  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.Exercise__3 PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Exercise_4/Program.cs">
     <Files>
-      <File FileName="Exercise_1/Program.cs" Line="34" Column="2" />
-      <File FileName="Exercise_2/Program.cs" Line="67" Column="24" />
-      <File FileName="Exercise_3/Program.cs" Line="92" Column="35" />
-      <File FileName="Exercise_4/Program.cs" Line="3" Column="3" />
+      <File FileName="Exercise_1/Program.cs" />
+      <File FileName="Exercise_2/Program.cs" />
+      <File FileName="Exercise_3/Program.cs" />
+      <File FileName="Exercise_4/Program.cs" Line="25" Column="26" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="HW_6" expanded="True">
-            <Node name="Exercise_4" expanded="True">
-              <Node name="Program.cs" selected="True" />
-            </Node>
+            <Node name="Exercise_1" expanded="True" />
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.Exercise__2 PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.ItemProperties.Exercise__4 PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.ItemProperties.Exercise__1 PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Exercise__3 PreferredExecutionTarget="MonoDevelop.Default" />
 </Properties>
