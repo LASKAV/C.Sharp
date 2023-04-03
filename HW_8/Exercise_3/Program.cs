@@ -16,11 +16,11 @@ namespace Exercise_3;
 
 struct RGBColor
 {
-    public byte R;
-    public byte G;
-    public byte B;
+    public int R;
+    public int G;
+    public int B;
 
-    public RGBColor(byte r, byte g, byte b)
+    public RGBColor(int r, int g, int b)
     {
         R = r;
         G = g;
@@ -29,48 +29,59 @@ struct RGBColor
 
     public string ToHex()
     {
-        var sb = new StringBuilder();
-        sb.Append(BitConverter.ToString(new byte[] { R }));
-        sb.Append(BitConverter.ToString(new byte[] { G }));
-        sb.Append(BitConverter.ToString(new byte[] { B }));
-        return sb.ToString().Replace("-", "");
+        string hexR = R.ToString("X2");
+        string hexG = G.ToString("X2");
+        string hexB = B.ToString("X2");
+        return $"#{hexR}{hexG}{hexB}";
     }
-
-    public string ToHsl()
+    public string ToHSL()
     {
-        double r = R / 255.0;
-        double g = G / 255.0;
-        double b = B / 255.0;
+        // Нормализуем значения цветов в пределах [0, 1]
+        float r = R / 255f;
+        float g = G / 255f;
+        float b = B / 255f;
 
-        double max = Math.Max(r, Math.Max(g, b));
-        double min = Math.Min(r, Math.Min(g, b));
-        double h = 0, s = 0, l = (max + min) / 2;
+        // Находим максимальное и минимальное значение из трех цветов
+        float max = Math.Max(r, Math.Max(g, b));
+        float min = Math.Min(r, Math.Min(g, b));
 
-        if (max == min)
+        // Находим разницу между максимальным и минимальным значением
+        float delta = max - min;
+
+        // Вычисляем яркость
+        float lightness = (max + min) / 2f;
+
+        // Если цвет оттенковый, то насыщенность равна 0
+        if (delta == 0f)
         {
-            h = s = 0;
+            return $"HSL(0, 0%, {(int)(lightness * 100)}%)";
         }
-        else
+
+        // Вычисляем насыщенность
+        float saturation = delta / (lightness < 0.5f ? (2f * lightness) : (2f - 2f * lightness));
+
+        // Вычисляем оттенок
+        float hue = 0f;
+        if (r == max)
         {
-            double d = max - min;
-            s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
-            switch (max)
-            {
-                case var _ when Math.Abs(r - max) < double.Epsilon:
-                    h = (g - b) / d + (g < b ? 6 : 0);
-                    break;
-                case var _ when Math.Abs(g - max) < double.Epsilon:
-                    h = (b - r) / d + 2;
-                    break;
-                case var _ when Math.Abs(b - max) < double.Epsilon:
-                    h = (r - g) / d + 4;
-                    break;
-            }
-            h /= 6;
+            hue = (g - b) / delta;
         }
-        return $"H: {h * 360:0}, S: {s * 100:0}%, L: {l * 100:0}%";
+        else if (g == max)
+        {
+            hue = 2f + (b - r) / delta;
+        }
+        else if (b == max)
+        {
+            hue = 4f + (r - g) / delta;
+        }
+        hue *= 60f;
+        if (hue < 0f)
+        {
+            hue += 360f;
+        }
+
+        return $"HSL({(int)hue}, {(int)(saturation * 100)}%, {(int)(lightness * 100)}%)";
     }
-
 
     public string ToCmyk()
     {
@@ -92,7 +103,7 @@ class Program
     {
         RGBColor rGB = new RGBColor(200, 100, 50);
         Console.WriteLine($"HEX format: {rGB.ToHex()}");
-        Console.WriteLine($"HSL format: {rGB.ToHsl()}");
+        Console.WriteLine($"HSL format: {rGB.ToHSL()}");
         Console.WriteLine($"CMYK format: {rGB.ToCmyk()}");
 
         Console.Read();
