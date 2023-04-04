@@ -1,6 +1,4 @@
-﻿
-
-namespace Exercise_1;
+﻿namespace Exercise_1;
 
 /*
                     Задание 1
@@ -52,17 +50,17 @@ class Program
         Console.WriteLine();
     }
     // ■ Метод для получения всех четных чисел в массиве
-    static bool Even_numbers(int num)
+    private static bool Even_numbers(int num)
     {
         return num % 2 == 0;
     }
     // ■ Метод для получения всех нечетных чисел в массиве
-    static bool Odd_numbers(int num)
+    private static bool Odd_numbers(int num)
     {
         return num % 2 != 0;
     }
     // ■ Метод для получения всех простых чисел в массиве
-    static bool Prime_numbers(int num)
+    private static bool Prime_numbers(int num)
     {
         if (num <= 1)
         {
@@ -81,7 +79,7 @@ class Program
 
     }
     // ■ Метод для получения всех чисел Фибоначчи в массиве
-    static bool Fibonacci_numbers(int num)
+    private static bool Fibonacci_numbers(int num)
     {
         int a = 0;
         int b = 1;
@@ -95,6 +93,7 @@ class Program
 
         return b == num;
     }
+
     static int[] FilterArray(int[] numbers, Filter_Arr filter)
     {
         int[] result = new int[numbers.Length];
