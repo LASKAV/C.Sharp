@@ -280,8 +280,8 @@ class Program
         {
             Console.WriteLine("1. Пополнение счёта");
             Console.WriteLine("2. Расход денег со счёта");
-            Console.WriteLine("3. Использования кредитных денег");
-            Console.WriteLine("4. Смена PIN");
+            Console.WriteLine("3. Использование кредитных денег");
+            Console.WriteLine("4. Замена PIN");
             Console.WriteLine("5. Информация пользователя");
             Console.WriteLine("6. Выход");
             Console.Write("Выберите категорию: ");
