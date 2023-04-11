@@ -29,45 +29,68 @@ class Program
     {
         Backpack pack = new Backpack();
         Console.WriteLine($"{pack}");
+        pack.ItemAdded += (item) => Console.WriteLine($"Добавлен объект: {item}"); // Анонимный метод в качестве обработчика события
+        pack.AddItem("Книга", 500, 1); // Добавляем объект в рюкзак
+        Console.WriteLine($"{pack}");
         Console.Read();
     }
 }
 
 class Backpack
 {
-    private string color { get; set; }    // ■ Цвет рюкзака;
-    private string firms { get; set; }    // ■ Фирма производитель;
-    private string textile { get; set; }  // ■ Ткань рюкзака;
-    private short weight { get; set; }    // ■ Вес рюкзака;
-    private short volume { get; set; }    // ■ Объём рюкзака;
-    // ■ Содержимое рюкзака
-    private Dictionary<string, short> content = new Dictionary<string, short>();
+    private string color { get; set; }    // ■ Цвет рюкзака
+    private string firm { get; set; }     // ■ Фирма производитель
+    private string textile { get; set; }  // ■ Ткань рюкзака
+    private int weight { get; set; }      // ■ Вес рюкзака
+    private int volume { get; set; }      // ■ Объём рюкзака
+    private Dictionary<string, int>      // ■ Содержимое рюкзака
+        content = new Dictionary<string, int>();
+
+    public event Action<string> ItemAdded;   // событие для добавления
+                                             // объекта в рюкзак.
+
     public Backpack()
     {
         color = "black";
-        firms = "adidas";
+        firm = "adidas";
         textile = "leather";
         weight = 1100;
         volume = 26;
         content.Add("Бутылки", 12);
     }
+
+    public void AddItem(string itemName, int itemWeight, int itemVolume)
+    {
+        if (content.Count >= volume) // Проверяем, не превышен ли объем рюкзака
+        {
+            throw new Exception("Ошибка: рюкзак уже заполнен!");
+        }
+        if (itemVolume > volume - content.Count) // Проверяем, достаточно ли места для добавления объекта в рюкзак
+        {
+            throw new Exception("Ошибка: недостаточно места в рюкзаке!");
+        }
+        content.Add(itemName, itemWeight);
+        ItemAdded?.Invoke(itemName); // Вызываем событие добавления объекта
+    }
+
     public string GetContent()
     {
-        StringBuilder sb = new StringBuilder();
-        Console.Write("Содержимое рюкзака:");
+        StringBuilder str = new StringBuilder();
+        Console.WriteLine("Содержимое рюкзака:");
         foreach (var iter in content)
         {
-            sb.AppendLine($"\n{iter.Key}: {iter.Value}г");
+            str.AppendLine($"{iter.Key}: {iter.Value}г");
         }
-        return sb.ToString();
+        return str.ToString();
     }
+
     public override string ToString()
     {
         if (1000 > weight)
         {
             return $"___Рюкзак___" +
             $"\n■ Цвет рюкзака: {color}" +
-            $"\n■ Фирма производитель: {firms} " +
+            $"\n■ Фирма производитель: {firm} " +
             $"\n■ Ткань рюкзака: {textile}" +
             $"\n■ Вес рюкзака: {weight}г" +
             $"\n■ Объём рюкзака: {volume}" +
@@ -77,7 +100,7 @@ class Backpack
         {
             return $"___Рюкзак___" +
             $"\n■ Цвет рюкзака: {color}" +
-            $"\n■ Фирма производитель: {firms} " +
+            $"\n■ Фирма производитель: {firm} " +
             $"\n■ Ткань рюкзака: {textile}" +
             $"\n■ Вес рюкзака: {weight}кг" +
             $"\n■ Объём рюкзака: {volume}" +
