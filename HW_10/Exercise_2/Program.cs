@@ -29,7 +29,8 @@ class Program
     {
         Backpack pack = new Backpack();
         Console.WriteLine($"{pack}");
-        pack.ItemAdded += (item) => Console.WriteLine($"Добавлен объект: {item}"); // Анонимный метод в качестве обработчика события
+        pack.ItemAdded += (item) => Console.WriteLine($"Добавлен объект: {item}");
+        // Анонимный метод в качестве обработчика события
         pack.AddItem("Книга", 500, 1); // Добавляем объект в рюкзак
         Console.WriteLine($"{pack}");
         Console.Read();
