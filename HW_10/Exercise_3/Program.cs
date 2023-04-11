@@ -32,7 +32,17 @@ class Program
         Rand_arr_positive_and_negative(_arr);
         Show_arr(_arr);
         int positiv = Multiples_positive(_arr, MultiplePositiv);
-
+        var Numbers = _arr.Where(num => num < 0).Distinct();
+        foreach (var num in Numbers)
+        {
+            Console.Write($"Уникальных отрицательных: {num}" + " ");
+        }
+        string[] str = { "Hello", "sada", "word", "hell" };
+        var select_str = str.Where(x => x == "word");
+        foreach (var item in select_str)
+        {
+            Console.WriteLine($"\nYou string: {item} ");
+        }
         Console.Read();
     }
     public static void Rand_arr_positive(int[] _arr)
@@ -86,6 +96,5 @@ class Program
         Console.WriteLine("Количество положительных в массиве : " + count);
         return count;
     }
-
 }
 
