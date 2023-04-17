@@ -44,11 +44,8 @@ struct Poem
 class Poems
 {
     private Dictionary<string, Poem> poem;
-
-    public Poems()
-    {
-        poem = new Dictionary<string, Poem>();
-    }
+    public Poems() => poem = new Dictionary<string, Poem>();
+    // * Добавлять стихи
     public void Add_Poems()
     {
         Console.WriteLine("Добавление стиха");
@@ -118,8 +115,9 @@ class Poems
                     break;
             }
         }
-    }   
-    public void Del_Poems()       // * Удалять стихи
+    }
+    // * Удалять стихи
+    public void Del_Poems()
     {
         Console.Write("\nВведите название стиха:");
         string dell = Console.ReadLine();
@@ -131,7 +129,8 @@ class Poems
         else
             Console.WriteLine($"Cтиха с таким названием {dell} нет");
     }
-    public void UpdatePoems()     // * Изменять информацию о стихах
+    // * Изменять информацию о стихах
+    public void UpdatePoems()
     {
         Console.Write("\nВведите название стиха:");
         string title = Console.ReadLine();
@@ -181,8 +180,9 @@ class Poems
         {
             Console.WriteLine($"Стих с названием '{title}' не найден.");
         }
-    }  
-    public void SearchPoems()     // * Искать стих по разным характеристикам
+    }
+    // * Искать стих по разным характеристикам
+    public void SearchPoems()
     {
         Console.WriteLine("Поиск стихов:");
         Console.WriteLine("1. По названию");
@@ -269,13 +269,14 @@ class Poems
             Console.WriteLine("Стихи по указанным характеристикам не найдены.");
         }
     }
+    // * Сохранять коллекцию стихов в файл
     public void SaveToFile(string filePath)
     {
         string json = JsonSerializer.Serialize(poem);
         File.WriteAllText(filePath, json);
         Console.WriteLine("Коллекция стихов успешно сохранена в файл.");
     }
-
+    // * Загружать коллекцию стихов из файла
     public void LoadFromFile(string filePath)
     {
         if (File.Exists(filePath))
@@ -289,6 +290,7 @@ class Poems
             Console.WriteLine("Файл не найден.");
         }
     }
+    // * Вывод стихов
     public void PrintPoems()
     {
         Console.WriteLine("Список стихов:");
