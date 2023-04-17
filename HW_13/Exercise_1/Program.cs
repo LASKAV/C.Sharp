@@ -1,4 +1,6 @@
 ﻿using System.Globalization;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Text.Json;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace Exercise_1;
@@ -116,8 +118,8 @@ class Poems
                     break;
             }
         }
-    }   // * Добавлять стихи
-    public void Del_Poems()      // * Удалять стихи
+    }   
+    public void Del_Poems()       // * Удалять стихи
     {
         Console.Write("\nВведите название стиха:");
         string dell = Console.ReadLine();
@@ -129,7 +131,7 @@ class Poems
         else
             Console.WriteLine($"Cтиха с таким названием {dell} нет");
     }
-    public void UpdatePoem()
+    public void UpdatePoems()     // * Изменять информацию о стихах
     {
         Console.Write("\nВведите название стиха:");
         string title = Console.ReadLine();
@@ -140,7 +142,9 @@ class Poems
             string authorFullName = Console.ReadLine();
             Console.Write("Год написания (yyyy-MM-dd): ");
             DateTimeOffset yearWritten;
-            while (!DateTimeOffset.TryParseExact(Console.ReadLine(), "yyyy-MM-dd", CultureInfo.InvariantCulture,
+            while (!DateTimeOffset.
+                TryParseExact(Console.ReadLine(),
+                "yyyy-MM-dd", CultureInfo.InvariantCulture,
                 DateTimeStyles.None, out yearWritten))
             {
                 Console.WriteLine("Ошибка ввода." +
@@ -177,8 +181,114 @@ class Poems
         {
             Console.WriteLine($"Стих с названием '{title}' не найден.");
         }
-    }  // * Изменять информацию о стихах
+    }  
+    public void SearchPoems()     // * Искать стих по разным характеристикам
+    {
+        Console.WriteLine("Поиск стихов:");
+        Console.WriteLine("1. По названию");
+        Console.WriteLine("2. По автору");
+        Console.WriteLine("3. По году написания");
+        Console.WriteLine("4. По теме");
+        Console.WriteLine("5. Отмена");
+        Console.Write("Выберите опцию (1-5): ");
+        string searchOption = Console.ReadLine();
+        List<string> foundPoems = new List<string>();
 
+        switch (searchOption)
+        {
+            case "1":
+                Console.Write("Введите название стиха: ");
+                string title = Console.ReadLine();
+                if (poem.ContainsKey(title))
+                {
+                    foundPoems.Add(title);
+                }
+                break;
+            case "2":
+                Console.Write("Введите автора: ");
+                string authorFullName = Console.ReadLine();
+                foreach (var item in poem)
+                {
+                    if (item.Value.AuthorFullName.
+                        Equals(authorFullName,
+                        StringComparison.OrdinalIgnoreCase))
+                    {
+                        foundPoems.Add(item.Key);
+                    }
+                }
+                break;
+            case "3":
+                Console.Write("Введите год написания (yyyy-MM-dd): ");
+                DateTimeOffset yearWritten;
+                while (!DateTimeOffset.
+                    TryParseExact(Console.ReadLine(),
+                    "yyyy-MM-dd", CultureInfo.InvariantCulture,
+                    DateTimeStyles.None, out yearWritten))
+                {
+                    Console.WriteLine("Ошибка ввода." +
+                        " Введите дату в формате 'yyyy-MM-dd': ");
+                }
+                foreach (var item in poem)
+                {
+                    if (item.Value.YearWritten.Equals(yearWritten))
+                    {
+                        foundPoems.Add(item.Key);
+                    }
+                }
+                break;
+            case "4":
+                Console.Write("Введите тему: ");
+                string theme = Console.ReadLine();
+                foreach (var item in poem)
+                {
+                    if (item.Value.Theme.Equals(theme,
+                        StringComparison.OrdinalIgnoreCase))
+                    {
+                        foundPoems.Add(item.Key);
+                    }
+                }
+                break;
+            case "5":
+                Console.WriteLine("Отмена.");
+                return;
+            default:
+                Console.WriteLine("Ошибка выбора.");
+                return;
+        }
+
+        if (foundPoems.Count > 0)
+        {
+            Console.WriteLine("Найденные стихи:");
+            foreach (var poemTitle in foundPoems)
+            {
+                Console.WriteLine($"- {poemTitle}");
+            }
+        }
+        else
+        {
+            Console.WriteLine("Стихи по указанным характеристикам не найдены.");
+        }
+    }
+    public void SaveToFile(string filePath)
+    {
+        string json = JsonSerializer.Serialize(poem);
+        File.WriteAllText(filePath, json);
+        Console.WriteLine("Коллекция стихов успешно сохранена в файл.");
+    }
+
+    public void LoadFromFile(string filePath)
+    {
+        if (File.Exists(filePath))
+        {
+            string json = File.ReadAllText(filePath);
+            poem = JsonSerializer.Deserialize<Dictionary<string, Poem>>(json);
+            Console.WriteLine("Коллекция стихов успешно загружена из файла.");
+        }
+        else
+        {
+            Console.WriteLine("Файл не найден.");
+        }
+    }
     public void PrintPoems()
     {
         Console.WriteLine("Список стихов:");
@@ -215,9 +325,6 @@ class Program
 
         _poems.Add_Poems();
         _poems.PrintPoems();
-        _poems.Del_Poems();
-        _poems.PrintPoems();
-        _poems.UpdatePoem();
         Console.Read();
     }
 }
