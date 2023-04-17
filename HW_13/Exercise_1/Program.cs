@@ -317,17 +317,307 @@ class Poems
 
 
     }
+    private void PrintPoemList(List<Poem> poems)
+    {
+        foreach (var poem in poems)
+        {
+            Console.WriteLine($"Название: {poem}");
+            Console.WriteLine($"Автор: {poem.AuthorFullName}");
+            Console.WriteLine($"Год написания:" +
+                $" {poem.YearWritten.ToString("yyyy-MM-dd")}");
+            Console.WriteLine($"Текст стиха: {string.Join("\n", poem.Text)}");
+            Console.WriteLine($"Тема: {poem.Theme}");
+            Console.WriteLine();
+        }
+    }
+    private void SaveOrPrintReport(List<Poem> poems)
+    {
+        Console.WriteLine("Выберите действие:");
+        Console.WriteLine("1. Отобразить отчет на экране");
+        Console.WriteLine("2. Сохранить отчет в файл");
+        string choice = Console.ReadLine();
+
+        switch (choice)
+        {
+            case "1":
+                Console.WriteLine("Отчет:");
+                PrintPoemList(poems);
+                break;
+            case "2":
+                Console.WriteLine("Введите имя файла для сохранения отчета:");
+                string fileName = Console.ReadLine();
+                string json = JsonSerializer.Serialize(poems);
+                File.WriteAllText(fileName, json);
+                Console.WriteLine($"Отчет сохранен в файл '{fileName}'.");
+                break;
+            default:
+                Console.WriteLine("Некорректный выбор.");
+                break;
+        }
+    }
+    // * По названию стиха
+    public void GenerateReportByTitle()
+    {
+        Console.WriteLine("Введите название стиха для генерации отчета:");
+        string title = Console.ReadLine();
+
+        List<Poem> poemsWithTitle = new List<Poem>();
+
+        foreach (var item in poem)
+        {
+            if (item.Key.Contains(title))
+            {
+                poemsWithTitle.Add(item.Value);
+            }
+        }
+
+        if (poemsWithTitle.Count > 0)
+        {
+            Console.WriteLine($"Отчет по названию стиха '{title}':");
+            PrintPoemList(poemsWithTitle);
+            SaveOrPrintReport(poemsWithTitle);
+        }
+        else
+        {
+            Console.WriteLine($"Стихи с названием '{title}' не найдены.");
+        }
+    }
+    // * По ФИО автора
+    public void GenerateReportByAuthorFullName()
+    {
+        Console.WriteLine("Введите ФИО автора для генерации отчета:");
+        string authorFullName = Console.ReadLine();
+
+        List<Poem> poemsWithAuthor = new List<Poem>();
+
+        foreach (var item in poem)
+        {
+            if (item.Value.AuthorFullName.Contains(authorFullName))
+            {
+                poemsWithAuthor.Add(item.Value);
+            }
+        }
+
+        if (poemsWithAuthor.Count > 0)
+        {
+            Console.WriteLine($"Отчет по ФИО автора '{authorFullName}':");
+            PrintPoemList(poemsWithAuthor);
+            SaveOrPrintReport(poemsWithAuthor);
+        }
+        else
+        {
+            Console.WriteLine($"Стихи автора '{authorFullName}' не найдены.");
+        }
+    }
+    // * По теме стиха
+    public void GenerateReportByTheme()
+    {
+        Console.WriteLine("Введите тему стиха для генерации отчета:");
+        string theme = Console.ReadLine();
+
+        List<Poem> poemsWithTheme = new List<Poem>();
+
+        foreach (var item in poem)
+        {
+            if (item.Value.Theme.Contains(theme))
+            {
+                poemsWithTheme.Add(item.Value);
+            }
+        }
+
+        if (poemsWithTheme.Count > 0)
+        {
+            Console.WriteLine($"Отчет по теме стиха '{theme}':");
+            PrintPoemList(poemsWithTheme);
+            SaveOrPrintReport(poemsWithTheme);
+        }
+        else
+        {
+            Console.WriteLine($"Стихи с темой '{theme}' не найдены.");
+        }
+    }
+    // * По слову в тексте стиха
+    public void GenerateReportByWord()
+    {
+        Console.WriteLine("Введите слово для поиска в тексте стиха:");
+        string word = Console.ReadLine();
+
+        List<Poem> poemsWithWord = new List<Poem>();
+
+        foreach (var item in poem)
+        {
+            if (item.Value.Text.Exists(line => line.Contains(word)))
+            {
+                poemsWithWord.Add(item.Value);
+            }
+        }
+
+        if (poemsWithWord.Count > 0)
+        {
+            Console.WriteLine($"Отчет по слову '{word}' в тексте стиха:");
+            PrintPoemList(poemsWithWord);
+            SaveOrPrintReport(poemsWithWord);
+        }
+        else
+        {
+            Console.WriteLine($"Стихи с словом '{word}' не найдены.");
+        }
+    }
+    // * По году написания стиха
+    public void GenerateReportByYear()
+    {
+        Console.WriteLine("Введите год написания стиха для генерации отчета:");
+        int year;
+        if (int.TryParse(Console.ReadLine(), out year))
+        {
+            List<Poem> poemsWithYear = new List<Poem>();
+
+            foreach (var item in poem)
+            {
+                if (item.Value.YearWritten.Year == year)
+                {
+                    poemsWithYear.Add(item.Value);
+                }
+            }
+
+            if (poemsWithYear.Count > 0)
+            {
+                Console.WriteLine($"Отчет по году написания стиха '{year}':");
+                PrintPoemList(poemsWithYear);
+                SaveOrPrintReport(poemsWithYear);
+            }
+            else
+            {
+                Console.WriteLine($"Стихи с годом написания '{year}' не найдены.");
+            }
+        }
+        else
+        {
+            Console.WriteLine("Некорректный ввод года. Попробуйте еще раз.");
+        }
+    }
+    // * По длине стиха
+    public void GenerateReportByLength()
+    {
+        Console.WriteLine("Введите длину стиха для генерации отчета:");
+        int length;
+        if (int.TryParse(Console.ReadLine(), out length))
+        {
+            List<Poem> poemsWithLength = new List<Poem>();
+
+            foreach (var item in poem)
+            {
+                if (item.Value.Text.Count == length)
+                {
+                    poemsWithLength.Add(item.Value);
+                }
+            }
+
+            if (poemsWithLength.Count > 0)
+            {
+                Console.WriteLine($"Отчет по длине стиха '{length}':");
+                PrintPoemList(poemsWithLength);
+                SaveOrPrintReport(poemsWithLength);
+            }
+            else
+            {
+                Console.WriteLine($"Стихи с длиной '{length}' не найдены.");
+            }
+        }
+        else
+        {
+            Console.WriteLine("Некорректный ввод длины. Попробуйте еще раз.");
+        }
+    }
 
 }
 class Program
 {
     static void Main(string[] args)
     {
-        Poems _poems = new Poems();
+        Poems _poem = new Poems();
 
-        _poems.Add_Poems();
-        _poems.PrintPoems();
-        Console.Read();
+        while (true)
+        {
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("==== Менеджер стихов ====");
+            Console.ResetColor();
+            Console.WriteLine("1. Добавить стих");
+            Console.WriteLine("2. Удалить стих");
+            Console.WriteLine("3. Обновить стих");
+            Console.WriteLine("4. Поиск стиха");
+            Console.WriteLine("5. Сохранить стихи в файл");
+            Console.WriteLine("6. Загрузить стихи из файла");
+            Console.WriteLine("7. Вывести список стихов");
+            Console.WriteLine("8. Отчет по названию стиха");
+            Console.WriteLine("9. Отчет по ФИО автора");
+            Console.WriteLine("10. Отчет по теме стиха");
+            Console.WriteLine("11. Отчет по слову в тексте стиха");
+            Console.WriteLine("12. Отчет по году написания стиха");
+            Console.WriteLine("13. Отчет по длине стиха");
+            Console.WriteLine("0. Выход");
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("=========================");
+            Console.ResetColor();
+            Console.Write("Выберите действие: ");
+            string choice = Console.ReadLine();
+
+            switch (choice)
+            {
+                case "1":
+                    _poem.Add_Poems();
+                    break;
+                case "2":
+                    _poem.Del_Poems();
+                    break;
+                case "3":
+                    _poem.UpdatePoems();
+                    break;
+                case "4":
+                    _poem.SearchPoems();
+                    break;
+                case "5":
+                    Console.WriteLine("Введите название файла: ");
+                    string namefile = Console.ReadLine();
+                    _poem.SaveToFile(namefile);
+                    break;
+                case "6":
+                    Console.WriteLine("Введите название файла: ");
+                    string namefile_new = Console.ReadLine();
+                    _poem.LoadFromFile(namefile_new);
+                    break;
+                case "7":
+                    _poem.PrintPoems();
+                    break;
+                case "8":
+                    _poem.GenerateReportByTitle();
+                    break;
+                case "9":
+                    _poem.GenerateReportByAuthorFullName();
+                    break;
+                case "10":
+                    _poem.GenerateReportByTheme();
+                    break;
+                case "11":
+                    _poem.GenerateReportByWord();
+                    break;
+                case "12":
+                    _poem.GenerateReportByYear();
+                    break;
+                case "13":
+                    _poem.GenerateReportByLength();
+                    break;
+                default:
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Некорректный выбор. Попробуйте еще раз.");
+                    Console.ResetColor();
+                    break;
+            }
+
+            Console.WriteLine("Нажмите любую клавишу для продолжения...");
+            Console.ReadKey();
+        }
     }
 }
 
