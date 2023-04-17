@@ -585,7 +585,7 @@ class Program
                 case "6":
                     Console.WriteLine("Введите название файла: ");
                     string namefile_new = Console.ReadLine();
-                    _poem.LoadFromFile(namefile_new);
+                    _poem.LoadFromFile(namefile_new); 
                     break;
                 case "7":
                     _poem.PrintPoems();
