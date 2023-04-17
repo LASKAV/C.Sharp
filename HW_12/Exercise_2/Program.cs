@@ -100,6 +100,12 @@ class Shop : IDisposable
         address = null;
         type_shope = null;
     }
+
+    ~Shop()
+    {
+        Console.WriteLine("Деструктор");
+        Dispose();
+    }
 }
 
 class Program
