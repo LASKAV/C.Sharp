@@ -608,6 +608,9 @@ class Program
                 case "13":
                     _poem.GenerateReportByLength();
                     break;
+                case "0":
+                    Environment.Exit(0);
+                    break;
                 default:
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Некорректный выбор. Попробуйте еще раз.");
