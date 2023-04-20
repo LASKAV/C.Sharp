@@ -1,0 +1,15 @@
+/Users/laskav/Documents/HW_C.Sharp/HW_12/Exercise_1/bin/Debug/net7.0/Exercise_1
+/Users/laskav/Documents/HW_C.Sharp/HW_12/Exercise_1/bin/Debug/net7.0/Exercise_1.deps.json
+/Users/laskav/Documents/HW_C.Sharp/HW_12/Exercise_1/bin/Debug/net7.0/Exercise_1.runtimeconfig.json
+/Users/laskav/Documents/HW_C.Sharp/HW_12/Exercise_1/bin/Debug/net7.0/Exercise_1.dll
+/Users/laskav/Documents/HW_C.Sharp/HW_12/Exercise_1/bin/Debug/net7.0/Exercise_1.pdb
+/Users/laskav/Documents/HW_C.Sharp/HW_12/Exercise_1/obj/Debug/net7.0/Exercise_1.csproj.AssemblyReference.cache
+/Users/laskav/Documents/HW_C.Sharp/HW_12/Exercise_1/obj/Debug/net7.0/Exercise_1.GeneratedMSBuildEditorConfig.editorconfig
+/Users/laskav/Documents/HW_C.Sharp/HW_12/Exercise_1/obj/Debug/net7.0/Exercise_1.AssemblyInfoInputs.cache
+/Users/laskav/Documents/HW_C.Sharp/HW_12/Exercise_1/obj/Debug/net7.0/Exercise_1.AssemblyInfo.cs
+/Users/laskav/Documents/HW_C.Sharp/HW_12/Exercise_1/obj/Debug/net7.0/Exercise_1.csproj.CoreCompileInputs.cache
+/Users/laskav/Documents/HW_C.Sharp/HW_12/Exercise_1/obj/Debug/net7.0/Exercise_1.dll
+/Users/laskav/Documents/HW_C.Sharp/HW_12/Exercise_1/obj/Debug/net7.0/refint/Exercise_1.dll
+/Users/laskav/Documents/HW_C.Sharp/HW_12/Exercise_1/obj/Debug/net7.0/Exercise_1.pdb
+/Users/laskav/Documents/HW_C.Sharp/HW_12/Exercise_1/obj/Debug/net7.0/Exercise_1.genruntimeconfig.cache
+/Users/laskav/Documents/HW_C.Sharp/HW_12/Exercise_1/obj/Debug/net7.0/ref/Exercise_1.dll
