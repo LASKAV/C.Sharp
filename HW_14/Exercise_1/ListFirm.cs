@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using static Exercise_1.Firm;
 
 /*
@@ -34,13 +35,7 @@ namespace Exercise_1
         {
             foreach (var firm in firms)
             {
-                Console.WriteLine(
-                    $"\nName: {firm.company_name}" +
-                    $"\nDate: {firm.founding_date.ToString("yyyy-MM-dd")}" +
-                    $"\nProfile: {firm.business_profile}" +
-                    $"\nDirector: {firm.fio_director}" +
-                    $"\nStaff: {firm.number_staff}" +
-                    $"\nAddress: {firm.address}");
+                firm.Print_Firm();
             }
         }
         //  Получить фирмы, у которых в названии есть слово Food
@@ -49,13 +44,7 @@ namespace Exercise_1
             var Filter = firms.Where(f => f.company_name.Contains(Type)).ToList();
             foreach (Firm firm in Filter)
             {
-                Console.WriteLine(
-                    $"Name: {firm.company_name}\n" +
-                    $"Date: {firm.founding_date.ToString("yyyy-MM-dd")}\n" +
-                    $"Profile: {firm.business_profile}\n" +
-                    $"Director: {firm.fio_director}\n" +
-                    $"Staff: {firm.number_staff}\n" +
-                    $"Address: {firm.address}\n");
+                firm.Print_Firm();
             }
 
         }
@@ -65,13 +54,7 @@ namespace Exercise_1
             var Filter = firms.Where(f => f.business_profile.Contains(Type)).ToList();
             foreach (Firm firm in Filter)
             {
-                Console.WriteLine(
-                    $"Name: {firm.company_name}\n" +
-                    $"Date: {firm.founding_date.ToString("yyyy-MM-dd")}\n" +
-                    $"Profile: {firm.business_profile}\n" +
-                    $"Director: {firm.fio_director}\n" +
-                    $"Staff: {firm.number_staff}\n" +
-                    $"Address: {firm.address}\n");
+                firm.Print_Firm();
             }
         }
         //  Получить фирмы, которые работают в области маркетинга или IT
@@ -84,13 +67,7 @@ namespace Exercise_1
 
             foreach (Firm firm in Filter)
             {
-                Console.WriteLine(
-                    $"Name: {firm.company_name}\n" +
-                    $"Date: {firm.founding_date.ToString("yyyy-MM-dd")}\n" +
-                    $"Profile: {firm.business_profile}\n" +
-                    $"Director: {firm.fio_director}\n" +
-                    $"Staff: {firm.number_staff}\n" +
-                    $"Address: {firm.address}\n");
+                firm.Print_Firm();
             }
         }
         //  Получить фирмы с количеством сотрудников, большем 100
@@ -99,13 +76,7 @@ namespace Exercise_1
             var Filter = firms.Where(f => f.number_staff > Type).ToList();
             foreach (Firm firm in Filter)
             {
-                Console.WriteLine(
-                    $"Name: {firm.company_name}\n" +
-                    $"Date: {firm.founding_date.ToString("yyyy-MM-dd")}\n" +
-                    $"Profile: {firm.business_profile}\n" +
-                    $"Director: {firm.fio_director}\n" +
-                    $"Staff: {firm.number_staff}\n" +
-                    $"Address: {firm.address}\n");
+                firm.Print_Firm();
             }
         }
         //  Получить фирмы с количеством сотрудников в диапазоне от 100 до 300
@@ -118,13 +89,7 @@ namespace Exercise_1
 
             foreach (Firm firm in Filter)
             {
-                Console.WriteLine(
-                    $"Name: {firm.company_name}\n" +
-                    $"Date: {firm.founding_date.ToString("yyyy-MM-dd")}\n" +
-                    $"Profile: {firm.business_profile}\n" +
-                    $"Director: {firm.fio_director}\n" +
-                    $"Staff: {firm.number_staff}\n" +
-                    $"Address: {firm.address}\n");
+                firm.Print_Firm();
             }
         }
         //  Получить фирмы, которые находятся в Лондоне
@@ -133,18 +98,54 @@ namespace Exercise_1
             var Filter = firms.Where(adress => adress.address == Type).ToList();
             foreach (Firm firm in Filter)
             {
-                Console.WriteLine(
-                    $"Name: {firm.company_name}\n" +
-                    $"Date: {firm.founding_date.ToString("yyyy-MM-dd")}\n" +
-                    $"Profile: {firm.business_profile}\n" +
-                    $"Director: {firm.fio_director}\n" +
-                    $"Staff: {firm.number_staff}\n" +
-                    $"Address: {firm.address}\n");
+                firm.Print_Firm();
             }
         }
         //  Получить фирмы, у которых фамилия директора White
         public void FilterByDirectorName(string Type)
         {
+            var Filter = firms.Where
+                (director => director.fio_director.EndsWith(Type)).ToList();
+            // EndsWith() -  позволяет проверить, заканчивается
+            // ли строка на заданную подстроку.
+            foreach (Firm firm in Filter)
+            {
+                firm.Print_Firm();
+            }
+        }
+        //  Получить фирмы, которые основаны больше двух лет назад
+        public void FilterByTwoYearsAgo()
+        {
+            var Filter = firms.Where
+                (date =>
+                date.founding_date < new DateTime(year: 2021, month: 01, day: 1));
+            foreach (Firm firm in Filter)
+            {
+                firm.Print_Firm();
+            }
+        }
+        //  Получить фирмы со дня основания, которых прошло 123 дня
+        public void FilterBy123DayAgo()
+        {
+            var Filter = firms.Where
+                (day =>
+                (DateTime.Today - day.founding_date).Days == 123).ToList();
+            foreach (Firm firm in Filter)
+            {
+                firm.Print_Firm();
+            }
+        }
+        //  Получить фирмы, у которых фамилия директора Black и название
+        // фирмы содержит слово White
+        public void FilterByBlackAndWhite()
+        {
+            var Filter = firms.Where
+                (fil => fil.fio_director.EndsWith("Black")
+                && fil.company_name.EndsWith("White")).ToList();
+            foreach (Firm firm in Filter)
+            {
+                firm.Print_Firm();
+            }
 
         }
     }

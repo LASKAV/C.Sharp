@@ -8,6 +8,9 @@ namespace Exercise_1
         {
             ListFirm _firms = CreateFirm();
 
+            Console.WriteLine("Получить информацию обо всех фирмах");
+            _firms.Print_Firm();
+
             Console.WriteLine("Получить фирмы," +
                 " у которых в названии есть слово Food");
 
@@ -32,6 +35,23 @@ namespace Exercise_1
 
             Console.WriteLine("Получить фирмы, которые находятся в Лондоне");
             _firms.FilterByAdress("London");
+
+            Console.WriteLine("Получить фирмы," +
+                " у которых фамилия директора White");
+            _firms.FilterByDirectorName("White");
+
+            Console.WriteLine("Получить фирмы," +
+                " которые основаны больше двух лет назад");
+            _firms.FilterByTwoYearsAgo();
+
+            Console.WriteLine("Получить фирмы" +
+                " со дня основания, которых прошло 123 дня");
+            _firms.FilterBy123DayAgo();
+
+            Console.WriteLine("Получить фирмы," +
+                " у которых фамилия директора Black и название " +
+                "фирмы содержит слово White");
+            _firms.FilterByBlackAndWhite();
 
             Console.Read();
         }
@@ -61,7 +81,15 @@ namespace Exercise_1
                 "technologies",
                 "John Smith",
                 100,
-                "123 Main St."
+                "123 Main St.",
+               new Employee
+                (
+                 "John Doe",
+                 "Manager",
+                 "555-1234",
+                 "johndoe@example.com",
+                 50000
+                )
             );
             return firm;
         }
@@ -73,31 +101,56 @@ namespace Exercise_1
                 "E-commerce",
                 "Jeff Bezos",
                 1298000,
-                "410 Terry Avenue North, Seattle, Washington, U.S."
+                "410 Terry Avenue North, Seattle, Washington, U.S.",
+                new Employee
+               (
+                 "Jane Smith",
+                 "Assistant",
+                 "555-5678",
+                 "janesmith@example.com",
+                 30000
+               )
             );
             return firm;
         }
         static Firm CreateFirmFood()
         {
             Firm firm = new Firm(
-            "Food",
+            "Food White",
             new DateTime(2000, 1, 1),
             "Food and Beverage",
-            "Jane Doe",
+            "Jane Black",
             100,
-            "456 Main St."
+            "456 Main St.",
+            new Employee
+                (
+                "Tom Wilson",
+                "Engineer",
+                "555-7890",
+                "twilson@example.com",
+                60000
+                )
             );
             return firm;
         }
         static Firm CreateFirmMarketing()
         {
+   
             Firm firm = new Firm(
                 "Marketing Inc.",
-                new DateTime(2005,7,3),
+                new DateTime(2022,12,22),
                 "marketing",
-                "Jane Doe",
+                "Jane White",
                 300,
-                "456 Market St."
+                "456 Market St.",
+                new Employee
+                (
+                    "Alice Johnson",
+                    "Sales Manager",
+                    "555-4321",
+                    "alicejohnson@example.com",
+                    60000
+                )
             );
             return firm;
         }
@@ -105,23 +158,41 @@ namespace Exercise_1
         {
             Firm firm = new Firm(
                 "IT Solutions",
-                new DateTime(2010,1,15),
+                new DateTime(2020,1,15),
                 "IT",
-                "Bob Johnson",
+                "Bob White",
                 75,
-                "789 Tech Ave."
+                "789 Tech Ave.",
+                new Employee(
+                    "Tom Wilson",
+                    "Engineer",
+                    "555-7890",
+                    "twilson@example.com",
+                    60000
+                    )
+               
             );
             return firm;
         }
         static Firm CreateFirmFromLondon()
         {
+            
             Firm firm =
                 new Firm("FirmLondon",
                 new DateTime(2000, 1, 1),
                 "Marketing",
                 "John Smith",
                 150,
-                "London");
+                "London",
+                new Employee
+                (
+                    "Bob Johnson",
+                    "Analyst",
+                    "555-9012",
+                    "bjohnson@example.com",
+                    45000
+                )
+                );
             return firm;
         }
     }
