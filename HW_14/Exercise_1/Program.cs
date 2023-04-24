@@ -53,6 +53,29 @@ namespace Exercise_1
                 "фирмы содержит слово White");
             _firms.FilterByBlackAndWhite();
 
+            Console.WriteLine("Получить всех сотрудников конкретной фирмы");
+            _firms.FilterByEmployeeFirm("Asus");
+
+            Console.WriteLine("Получить всех сотрудников конкретной фирмы," +
+                " у которых заработные платы больше заданной");
+            _firms.FilterByEmployeeSalary("Amazon", 3000);
+
+            Console.WriteLine("Получить сотрудников всех фирм," +
+                " у которых должность менеджер");
+            _firms.FilterByEmployeeManager();
+
+            Console.WriteLine("Получить сотрудников," +
+                " у которых телефон начинается с 23");
+            _firms.FilterByEmployeePhone();
+
+            Console.WriteLine("Получить сотрудников," +
+                " у которых Email начинается с di");
+            _firms.FilterByEmployeeEmail();
+
+            Console.WriteLine("Получить сотрудников, у которых имя Lionel");
+            _firms.FilterByEmployeeName();
+
+
             Console.Read();
         }
         static ListFirm CreateFirm()
@@ -84,7 +107,7 @@ namespace Exercise_1
                 "123 Main St.",
                new Employee
                 (
-                 "John Doe",
+                 "Lionel Doe",
                  "Manager",
                  "555-1234",
                  "johndoe@example.com",
@@ -105,9 +128,9 @@ namespace Exercise_1
                 new Employee
                (
                  "Jane Smith",
-                 "Assistant",
+                 "Manager",
                  "555-5678",
-                 "janesmith@example.com",
+                 "dinesmith@example.com",
                  30000
                )
             );
@@ -126,8 +149,8 @@ namespace Exercise_1
                 (
                 "Tom Wilson",
                 "Engineer",
-                "555-7890",
-                "twilson@example.com",
+                "235-7890",
+                "diilson@example.com",
                 60000
                 )
             );
@@ -146,8 +169,8 @@ namespace Exercise_1
                 new Employee
                 (
                     "Alice Johnson",
-                    "Sales Manager",
-                    "555-4321",
+                    "Manager",
+                    "235-4321",
                     "alicejohnson@example.com",
                     60000
                 )
@@ -164,8 +187,8 @@ namespace Exercise_1
                 75,
                 "789 Tech Ave.",
                 new Employee(
-                    "Tom Wilson",
-                    "Engineer",
+                    "Lionel Wilson",
+                    "Manager",
                     "555-7890",
                     "twilson@example.com",
                     60000
@@ -188,7 +211,7 @@ namespace Exercise_1
                 (
                     "Bob Johnson",
                     "Analyst",
-                    "555-9012",
+                    "235-9012",
                     "bjohnson@example.com",
                     45000
                 )

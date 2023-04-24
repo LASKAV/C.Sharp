@@ -23,7 +23,7 @@ namespace Exercise_1
        public string fio_director { get; set; }
        public int number_staff { get; set; }
        public string address { get; set; }
-        public List<Employee> employees = new List<Employee>();
+       public List<Employee> employees = new List<Employee>();
 
         public Firm(){}
         public Firm(string company_name, DateTime date,

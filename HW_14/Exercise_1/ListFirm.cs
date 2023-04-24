@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using static System.Net.WebRequestMethods;
 using static Exercise_1.Firm;
 
 /*
@@ -16,6 +17,17 @@ using static Exercise_1.Firm;
  Получить фирмы со дня основания, которых прошло 123 дня
  Получить фирмы, у которых фамилия директора Black и название
 фирмы содержит слово White
+
+Для массива сотрудников фирмы реализуйте следующие запросы:
+ Получить всех сотрудников конкретной фирмы
+ Получить всех сотрудников конкретной фирмы, у которых
+заработные платы больше заданной
+ Получить сотрудников всех фирм, у которых должность
+менеджер
+ Получить сотрудников, у которых телефон начинается с 23
+ Получить сотрудников, у которых Email начинается с di
+ Получить сотрудников, у которых имя Lionel
+
  */
 
 namespace Exercise_1
@@ -145,6 +157,97 @@ namespace Exercise_1
             foreach (Firm firm in Filter)
             {
                 firm.Print_Firm();
+            }
+
+        }
+        //  Получить всех сотрудников конкретной фирмы
+        public void FilterByEmployeeFirm(string Type)
+        {
+            var Filter = firms.Where
+                (emplFirm => emplFirm.company_name == Type).ToList();
+            Console.WriteLine($"Firm: {Type}");
+            foreach (Firm firm in Filter)
+            {
+                foreach (Employee employee in firm.employees)
+                {
+                    employee.Print_Employee();
+                }
+            }
+        }
+        //  Получить всех сотрудников конкретной фирмы, у которых
+        // заработные платы больше заданной
+        public void FilterByEmployeeSalary(string Type, decimal salary)
+        {
+            var Filter_firm = firms.Where
+                (sal => sal.company_name == Type).ToList();
+
+            Console.WriteLine($"Firm: {Type}");
+            foreach (Firm firm in Filter_firm)
+            {
+                var Filter_empl = firm.employees.
+                    Where(empl => empl.salary > salary).ToList();
+                foreach (Employee employee in Filter_empl)
+                {
+                    employee.Print_Employee();
+                }
+            }
+           
+
+
+
+
+        }
+        //  Получить сотрудников всех фирм, у которых должность
+        // менеджер
+        public void FilterByEmployeeManager()
+        {
+            var managers = firms.SelectMany(firm => firm.employees)
+                        .Where(employee => employee.position == "Manager")
+                        .ToList();
+            // SelectMany - для объединения списков сотрудников из всех фирм
+            foreach (var manager in managers)
+            {
+                Console.WriteLine(
+                    $"\nName: {manager.full_name}\n" +
+                    $"Position: {manager.position}\n");
+            }
+        }
+        //  Получить сотрудников, у которых телефон начинается с 23
+        public void FilterByEmployeePhone()
+        {
+            var Filter = firms.SelectMany(fir => fir.employees)
+                .Where(pho => pho.phone.StartsWith("23")).ToList();
+            foreach (var manager in Filter)
+            {
+                Console.WriteLine(
+                    $"\nName: {manager.full_name}\n" +
+                    $"Position: {manager.phone}\n");
+            }
+        }
+        //  Получить сотрудников, у которых Email начинается с di
+        public void FilterByEmployeeEmail()
+        {
+            var Filter = firms.SelectMany(fir => fir.employees)
+                .Where(emal => emal.email.StartsWith("di")).ToList();
+
+            foreach (var manager in Filter)
+            {
+                Console.WriteLine(
+                    $"\nName: {manager.full_name}\n" +
+                    $"Position: {manager.email}\n");
+            }
+        }
+        //  Получить сотрудников, у которых имя Lionel
+        public void FilterByEmployeeName()
+        {
+            var Filter = firms.SelectMany(fir => fir.employees)
+                .Where(name => name.full_name.StartsWith("Lionel")).ToList();
+
+            foreach (var manager in Filter)
+            {
+                Console.WriteLine(
+                    $"\nName: {manager.full_name}\n" +
+                    $"Position: {manager.email}\n");
             }
 
         }
