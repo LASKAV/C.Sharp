@@ -1,4 +1,27 @@
 ﻿<Properties StartupConfiguration="{111A38D5-A864-434E-BCF9-7E734B044E6B}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Exercise_1/ListPhone.cs">
+    <Files>
+      <File FileName="Exercise_1/Program.cs" Line="28" Column="34" />
+      <File FileName="Exercise_1/Phone.cs" Line="1" Column="1" />
+      <File FileName="Exercise_1/ListPhone.cs" Line="147" Column="10" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="HW_15" expanded="True">
+            <Node name="Exercise_1" expanded="True">
+              <Node name="ListPhone.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.Exercise__1 FirstBuild="True" />
+  <MonoDevelop.Ide.ItemProperties.Exercise__1 PreferredExecutionTarget="MonoDevelop.Default" />
 </Properties>

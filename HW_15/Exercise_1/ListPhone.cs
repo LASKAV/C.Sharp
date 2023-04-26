@@ -1,17 +1,17 @@
 ﻿using System;
 
 /*
-Для массива телефонов выполните следующие задания, используя
-агрегатные операции из LINQ:
- Посчитайте количество телефонов
- Посчитайте количество телефонов с ценой больше 100
- Посчитайте количество телефонов с ценой в диапазоне от 400 до 700
- Посчитайте количество телефонов конкретного производителя
- Найдите телефон с минимальной ценой
- Найдите телефон с максимальной ценой
- Отобразите информацию о самом старом телефоне
- Отобразите информацию о самом свежем телефоне
- Найдите среднюю цену телефона
+                    Задание 3:
+Добавьте к первому заданию новую функциональность:
+ Отобразите статистику по количеству
+телефонов каждого производителя.
+Например: Sony – 3, Samsung – 4, Apple – 5 и т. д.
+ Отобразите статистику по количеству
+моделей телефонов.
+Например: IPhone 13 – 12, IPhone 10 – 11, Galaxy S22 – 8
+ Отобразите статистику телефонов по годам.
+Например: 2021 – 10, 2022 – 5, 2019 – 3
+
  */
 
 namespace Exercise_1
@@ -19,7 +19,6 @@ namespace Exercise_1
     public class ListPhone : Phone
     {
         List<Phone> phones = new List<Phone>();
-
         public ListPhone() { }
         public void AddPhone(Phone phone)
         {
@@ -99,6 +98,88 @@ namespace Exercise_1
         {
             var Filter = phones.Average(pric => pric.price);
             Console.WriteLine($"Средняя цена телефона: {Filter:C}");
+        }
+        //  Отобразите пять самых дорогих телефонов
+        public void FilterByFiveExpensivePhones()
+        {
+            var Filter = phones.OrderByDescending(pho => pho.price).Take(5);
+
+            foreach (Phone item in Filter)
+            {
+                item.ShowPhone();
+            }
+        }
+        //  Отобразите пять самых дешевых телефонов
+        public void FilterByFiveCheapPhones()
+        {
+            var Filter = phones.OrderBy(pho => pho.price).Take(5);
+
+            foreach (Phone item in Filter)
+            {
+                item.ShowPhone();
+            }
+
+        }
+        //  Отобразите три самых старых телефона
+        public void FilterByFiveOldPhones()
+        {
+            var Filter = phones.OrderBy(phe => phe.release_date).Take(3);
+
+            foreach (Phone item in Filter)
+            {
+                item.ShowPhone();
+            }
+        }
+        //  Отобразите три самых новых телефона
+        public void FilterByFiveNewPhones()
+        {
+            var Filter = phones.OrderByDescending(phe => phe.release_date).Take(3);
+
+            foreach (Phone item in Filter)
+            {
+                item.ShowPhone();
+            }
+        }
+        //  Отобразите статистику по количеству
+        // телефонов каждого производителя.
+        // Например: Sony – 3, Samsung – 4, Apple – 5 и т. д.
+        public void FilterByStatsManufacturer()
+        {
+            var Filter = phones.GroupBy(x => x.manufacturer).
+                Select(y => new {Model = y.Key, Count = y.Count()});
+
+            foreach (var item in Filter)
+            {
+                Console.WriteLine($"Производитель {item.Model}" +
+                    $" - {item.Count} шт.");
+            }
+        }
+        //  Отобразите статистику по количеству
+        // моделей телефонов.
+        // Например: IPhone 13 – 12, IPhone 10 – 11, Galaxy S22 – 8
+        public void FilterByStatsModel()
+        {
+            var Filter = phones.GroupBy(x => x.title).
+                Select(y => new { Model = y.Key, Count = y.Count() });
+
+            foreach (var item in Filter)
+            {
+                Console.WriteLine($"Модель {item.Model}" +
+                    $" - {item.Count} шт.");
+            }
+        }
+        //  Отобразите статистику телефонов по годам.
+        // Например: 2021 – 10, 2022 – 5, 2019 – 3
+        public void FilterByStatsYear()
+        {
+            var Filter = phones.GroupBy(x => x.release_date.Year).
+                Select(y => new { Model = y.Key, Count = y.Count() });
+
+            foreach (var item in Filter)
+            {
+                Console.WriteLine($"Год {item.Model}"+
+                    $" - {item.Count} шт.");
+            }
         }
     }
 }
