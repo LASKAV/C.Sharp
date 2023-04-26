@@ -19,7 +19,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        Exer_one();
+        Exer();
         
         
 
@@ -161,7 +161,7 @@ class Program
 
         return sony;
     }
-    static void Exer_one()
+    static void Exer()
     {
         ListPhone listPhone = CreateList();
         // listPhone.ShowPhoneList();
