@@ -49,10 +49,16 @@ class Program
         string JsonString = File.ReadAllText("fractions.json");
 
         // Десериализация массива дробей
-        Fraction[] loadedFractions = JsonSerializer.Deserialize<Fraction[]>(JsonString);
+        Fraction[] loadedFractions =
+        JsonSerializer.Deserialize<Fraction[]>(JsonString);
+
 
         Console.WriteLine("\nСериализованный массив дробей:");
         Console.WriteLine(JsonString);
+        // Обращаем ваше внимание, что выбор должен быть обоснованным
+        // лучше хранить массив дробей в Json фомате так как
+        // Json представляет собой храниния данных ввиде
+        // труктур данных, таких как объекты, массивы, строки, числа, bool
         Console.Read();
     }
 }
