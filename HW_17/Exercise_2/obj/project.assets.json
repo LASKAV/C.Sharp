@@ -1,0 +1,152 @@
+{
+  "version": 3,
+  "targets": {
+    "net7.0": {
+      "Faker/1.2.0": {
+        "type": "package",
+        "compile": {
+          "lib/Faker.dll": {}
+        },
+        "runtime": {
+          "lib/Faker.dll": {}
+        }
+      },
+      "NLog/5.1.4": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/NLog.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/NLog.dll": {
+            "related": ".xml"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Faker/1.2.0": {
+      "sha512": "FvYt17xHV8R0DGb3O5scLtiWK8RrBuG0feDAWuzdM1l1bS62JOuhNgf4BgJthGFYZrEMKoU5XgCODLtXpS0cvw==",
+      "type": "package",
+      "path": "faker/1.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "faker.1.2.0.nupkg.sha512",
+        "faker.nuspec",
+        "lib/Faker.dll"
+      ]
+    },
+    "NLog/5.1.4": {
+      "sha512": "Ki0XThITEd//RrQ21yi1HB/Uid4pzTRE5YLvEpk91d0vDXp3OPtVCvWgrYsqqcpTwiipFSOLSsU1RblaexrFiA==",
+      "type": "package",
+      "path": "nlog/5.1.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "N.png",
+        "lib/net35/NLog.dll",
+        "lib/net35/NLog.xml",
+        "lib/net45/NLog.dll",
+        "lib/net45/NLog.xml",
+        "lib/net46/NLog.dll",
+        "lib/net46/NLog.xml",
+        "lib/netstandard1.3/NLog.dll",
+        "lib/netstandard1.3/NLog.xml",
+        "lib/netstandard1.5/NLog.dll",
+        "lib/netstandard1.5/NLog.xml",
+        "lib/netstandard2.0/NLog.dll",
+        "lib/netstandard2.0/NLog.xml",
+        "nlog.5.1.4.nupkg.sha512",
+        "nlog.nuspec"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net7.0": [
+      "Faker >= 1.2.0",
+      "NLog >= 5.1.4"
+    ]
+  },
+  "packageFolders": {
+    "/Users/laskav/.nuget/packages/": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "/Users/laskav/Documents/HW_C.Sharp/HW_17/Exercise_2/Exercise_2.csproj",
+      "projectName": "Exercise_2",
+      "projectPath": "/Users/laskav/Documents/HW_C.Sharp/HW_17/Exercise_2/Exercise_2.csproj",
+      "packagesPath": "/Users/laskav/.nuget/packages/",
+      "outputPath": "/Users/laskav/Documents/HW_C.Sharp/HW_17/Exercise_2/obj/",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "/Users/laskav/.nuget/NuGet/NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net7.0"
+      ],
+      "sources": {
+        "/usr/local/share/dotnet/library-packs": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net7.0": {
+        "targetAlias": "net7.0",
+        "dependencies": {
+          "Faker": {
+            "target": "Package",
+            "version": "[1.2.0, )"
+          },
+          "NLog": {
+            "target": "Package",
+            "version": "[5.1.4, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.203/RuntimeIdentifierGraph.json"
+      }
+    }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Faker 1.2.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Faker",
+      "targetGraphs": [
+        "net7.0"
+      ]
+    }
+  ]
+}
