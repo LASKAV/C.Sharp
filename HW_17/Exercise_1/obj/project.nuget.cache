@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "QnLh3wiPWMHvRTICr4qqHggs9RljQwheS5qQ5OvSyf+m8UFI/rogk3V5E4ivaxsaL1uySDNZ85XfH49QBZgMrQ==",
+  "success": true,
+  "projectFilePath": "/Users/laskav/Documents/HW_C.Sharp/HW_17/Exercise_1/Exercise_1.csproj",
+  "expectedPackageFiles": [
+    "/Users/laskav/.nuget/packages/nlog/5.1.4/nlog.5.1.4.nupkg.sha512"
+  ],
+  "logs": []
+}
