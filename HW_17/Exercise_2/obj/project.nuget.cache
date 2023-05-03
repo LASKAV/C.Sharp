@@ -1,11 +1,18 @@
 {
   "version": 2,
-  "dgSpecHash": "Tn9Fu0z936n2fH0qiMAelhwHoL1+bUoMU8YO2Qeuy3MkeNEycUEcoFWp4VSqIvbqhf8f4FfVnVQl++XBEji/Ig==",
+  "dgSpecHash": "Lt3DtpEckMIlOMV+FLUfqYbQfQkNMfuSj++YsdAgUYGXJAN1QASBw73BRzEg2mFlw+748moD7WE+zsl9MrL9WA==",
   "success": true,
   "projectFilePath": "/Users/laskav/Documents/HW_C.Sharp/HW_17/Exercise_2/Exercise_2.csproj",
   "expectedPackageFiles": [
     "/Users/laskav/.nuget/packages/faker/1.2.0/faker.1.2.0.nupkg.sha512",
-    "/Users/laskav/.nuget/packages/nlog/5.1.4/nlog.5.1.4.nupkg.sha512"
+    "/Users/laskav/.nuget/packages/log4net/2.0.15/log4net.2.0.15.nupkg.sha512",
+    "/Users/laskav/.nuget/packages/microsoft.netcore.platforms/2.0.0/microsoft.netcore.platforms.2.0.0.nupkg.sha512",
+    "/Users/laskav/.nuget/packages/nlog/5.1.4/nlog.5.1.4.nupkg.sha512",
+    "/Users/laskav/.nuget/packages/system.configuration.configurationmanager/4.5.0/system.configuration.configurationmanager.4.5.0.nupkg.sha512",
+    "/Users/laskav/.nuget/packages/system.security.accesscontrol/4.5.0/system.security.accesscontrol.4.5.0.nupkg.sha512",
+    "/Users/laskav/.nuget/packages/system.security.cryptography.protecteddata/4.5.0/system.security.cryptography.protecteddata.4.5.0.nupkg.sha512",
+    "/Users/laskav/.nuget/packages/system.security.permissions/4.5.0/system.security.permissions.4.5.0.nupkg.sha512",
+    "/Users/laskav/.nuget/packages/system.security.principal.windows/4.5.0/system.security.principal.windows.4.5.0.nupkg.sha512"
   ],
   "logs": [
     {

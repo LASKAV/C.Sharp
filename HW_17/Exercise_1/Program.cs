@@ -1,72 +1,65 @@
-﻿using System;
-using System.IO;
-using System.Linq;
+﻿using System.Net;
+using System.Numerics;
+using System.Xml.Linq;
+using static Exercise_2.User;
+using NLog.Fluent;
 using NLog;
 
-namespace Exercise_1;
-
-/*
-                            Задание 1:
-Создайте приложение для поиска информации в файле по текстовому шаблону.
-Варианты поддерживаемых шаблонов:
-
- Отобразить все предложения, содержащие хотя бы одну маленькую, английскую букву
- Отобразить все предложения, содержащие хотя бы одну цифру
- Отобразить все предложения, содержащие хотя бы одну большую, английскою букву
-
-В программе настройте логирование с использованием NLog.
-
- */
-
-class Program
+namespace Exercise_2
 {
-    public static Logger Logger = LogManager.GetCurrentClassLogger();
+    /*
+                                Задание 2:
+    Создайте приложение для генерации фейковых пользователей.
+    У каждого пользователя должна быть такая информация:
 
-    static void Main(string[] args)
+     Имя
+     Фамилия
+     Контактный телефон
+     Email
+     Адрес
+
+    Генерация фейковых пользователей должна быть оформлена
+    в виде класса. Фактически нужно создать класс для
+    генерации фейкового пользователя.
+
+    Напишите код для тестирования фейковых пользователей
+    В программе настройте логирование с использованием Serialog.
+
+     */
+    class Program
     {
-        string file = "Text.txt";
+        public static Logger Logger = LogManager.GetCurrentClassLogger();
 
-        string[] lines = File.ReadAllLines(file);
-
-        // Поиск предложений, содержащих хотя бы одну маленькую, английскую букву
-        string[] lowercaseSentences = lines.
-            Where(line => line.Any(char.IsLower)).ToArray();
-        LogSentences(lowercaseSentences,
-            "предложения, содержащие хотя бы одну маленькую, английскую букву:");
-
-
-        // Поиск предложений, содержащих хотя бы одну цифру
-        string[] numericSentences = lines.
-            Where(line => line.Any(char.IsDigit)).ToArray();
-        LogSentences(numericSentences,
-            "предложения, содержащие хотя бы одну цифру:");
-
-
-        // Поиск предложений, содержащих хотя бы одну большую, английскую букву
-        string[] uppercaseSentences = lines.
-                Where(line => line.Any(char.IsUpper)).ToArray();
-            LogSentences(uppercaseSentences,
-                "предложения, содержащие хотя бы одну большую, английскую букву:");
-        Console.Read();
-    }
-    static void LogSentences(string[] sentences, string message)
-    {
-       
-        if (sentences.Length == 0)
+        static void Main(string[] args)
         {
-            Logger.Info("Не найдено " + message);
-            Console.WriteLine("Не найдено " + message);
+            // Настройка логирования с использованием Serilog
+            Log.Logger = new LoggerConfiguration()
+                .MinimumLevel.Debug()
+                .WriteTo.Console()
+                .WriteTo.File("logs/log-.txt", rollingInterval: RollingInterval.Day)
+                .CreateLogger();
 
-            return;
-        }
+            Log.Information("Старт генерации пользователей");
 
-        Logger.Info("Найдено " + sentences.Length + " " + message);
-        Console.WriteLine("Найдено " + sentences.Length + " " + message);
-        for (int i = 0; i < sentences.Length; i++)
-        {
-            Logger.Info("Предложение " + (i + 1) + ": " + sentences[i]);
-            Console.WriteLine("Предложение " + (i + 1) + ": " + sentences[i]);
+            for (int i = 0; i < 10; i++)
+            {
+                var fakeUser = new User
+                {
+                    FirstName = Name.First(),
+                    LastName = Name.Last(),
+                    Phone = Phone.Number(),
+                    Email = Internet.Email(),
+                    Address = Address.FullAddress()
+                };
+
+                Log.Debug("Сгенерирован пользователь: {@User}", fakeUser);
+            }
+
+            Log.Information("Генерация фейковых пользователей завершена");
+
+            Console.ReadLine();
         }
     }
 }
+
 
