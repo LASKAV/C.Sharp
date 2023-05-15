@@ -7,9 +7,6 @@ using NLog.Targets;
 using System.Diagnostics;
 using NLog.Conditions;
 
-
-
-
 /*
                             Задание 1:
 Создайте приложение для поиска информации в файле по текстовому шаблону.
@@ -23,7 +20,6 @@ using NLog.Conditions;
 
 namespace Exercise_1
 {
-
     class Program
     {
         public static Logger Logger = LogManager.GetCurrentClassLogger();
@@ -147,7 +143,5 @@ namespace Exercise_1
                 Logger.Warn("Файл не найден");
             }
         }
-
-
     }
 }
