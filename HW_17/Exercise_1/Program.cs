@@ -1,65 +1,124 @@
 ﻿using System.Net;
 using System.Numerics;
 using System.Xml.Linq;
-using static Exercise_2.User;
 using NLog.Fluent;
 using NLog;
+using NLog.Targets;
+using System.Diagnostics;
+using NLog.Conditions;
 
-namespace Exercise_2
+
+
+/*
+                            Задание 2:
+Создайте приложение для генерации фейковых пользователей.
+У каждого пользователя должна быть такая информация:
+
+ Имя
+ Фамилия
+ Контактный телефон
+ Email
+ Адрес
+
+Генерация фейковых пользователей должна быть оформлена
+в виде класса. Фактически нужно создать класс для
+генерации фейкового пользователя.
+
+Напишите код для тестирования фейковых пользователей
+В программе настройте логирование с использованием Serialog.
+
+ */
+
+namespace Exercise_1
 {
-    /*
-                                Задание 2:
-    Создайте приложение для генерации фейковых пользователей.
-    У каждого пользователя должна быть такая информация:
 
-     Имя
-     Фамилия
-     Контактный телефон
-     Email
-     Адрес
+    public class User
+    {
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Phone { get; set; }
+        public string Email { get; set; }
+        public string Address { get; set; }
+    }
 
-    Генерация фейковых пользователей должна быть оформлена
-    в виде класса. Фактически нужно создать класс для
-    генерации фейкового пользователя.
-
-    Напишите код для тестирования фейковых пользователей
-    В программе настройте логирование с использованием Serialog.
-
-     */
     class Program
     {
         public static Logger Logger = LogManager.GetCurrentClassLogger();
 
         static void Main(string[] args)
         {
-            // Настройка логирования с использованием Serilog
-            Log.Logger = new LoggerConfiguration()
-                .MinimumLevel.Debug()
-                .WriteTo.Console()
-                .WriteTo.File("logs/log-.txt", rollingInterval: RollingInterval.Day)
-                .CreateLogger();
-
-            Log.Information("Старт генерации пользователей");
-
-            for (int i = 0; i < 10; i++)
+            User user1 = new User
             {
-                var fakeUser = new User
-                {
-                    FirstName = Name.First(),
-                    LastName = Name.Last(),
-                    Phone = Phone.Number(),
-                    Email = Internet.Email(),
-                    Address = Address.FullAddress()
-                };
+                FirstName = "John",
+                LastName = "Doe",
+                Phone = "123-456-7890",
+                Email = "john.doe@example.com",
+                Address = "123 Main Street"
+            };
 
-                Log.Debug("Сгенерирован пользователь: {@User}", fakeUser);
+            User user2 = new User
+            {
+                FirstName = "Jane",
+                LastName = "Smith",
+                Phone = "987-654-3210",
+                Email = "jane.smith@example.com",
+                Address = "456 Elm Street"
+            };
+
+            User user3 = new User
+            {
+                FirstName = "Bob",
+                LastName = "Johnson",
+                Phone = "555-123-4567",
+                Email = "bob.johnson@example.com",
+                Address = "789 Oak Avenue"
+            };
+
+            List<User> fakeUser = new List<User>();
+            fakeUser.Add(user1);
+            fakeUser.Add(user2);
+            fakeUser.Add(user3);
+
+            var config = new NLog.Config.LoggingConfiguration();
+
+            //-------------------- Target Console ----------------------------------------
+
+            var consoleTarget = new ColoredConsoleTarget()
+            {
+                Layout = @"${longdate}|${level:uppercase=true}|${logger}|${message}"
+            };
+
+            // Rules for mapping loggers to targets
+            config.AddRule(LogLevel.Trace, LogLevel.Fatal, consoleTarget);
+
+            //-------------------- Target File ----------------------------------------
+            // Apply config
+            NLog.LogManager.Configuration = config;
+
+            var Trace = new ConsoleRowHighlightingRule();
+            Trace.Condition = ConditionParser.ParseExpression("level == LogLevel.Trace");
+            Trace.ForegroundColor = ConsoleOutputColor.Yellow;
+            consoleTarget.RowHighlightingRules.Add(Trace);
+            var Debug = new ConsoleRowHighlightingRule();
+            Debug.Condition = ConditionParser.ParseExpression("level == LogLevel.Debug");
+            Debug.ForegroundColor = ConsoleOutputColor.DarkCyan;
+            consoleTarget.RowHighlightingRules.Add(Debug);
+            var Info = new ConsoleRowHighlightingRule();
+            Info.Condition = ConditionParser.ParseExpression("level == LogLevel.Info");
+            Info.ForegroundColor = ConsoleOutputColor.Green;
+            consoleTarget.RowHighlightingRules.Add(Info);
+
+            Logger.Info($"Старт генерации пользователей");
+
+            for (int i = 0; i < 3; i++)
+            {
+                Logger.Debug($"Сгенерирован пользователь: @{fakeUser[i].FirstName}");
             }
 
-            Log.Information("Генерация фейковых пользователей завершена");
+            Logger.Info("Генерация фейковых пользователей завершена");
 
             Console.ReadLine();
         }
+
     }
 }
-
-

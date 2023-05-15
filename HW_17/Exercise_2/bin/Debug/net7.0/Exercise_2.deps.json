@@ -6,13 +6,22 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v7.0": {
-      "Exercise_1/1.0.0": {
+      "Exercise_2/1.0.0": {
         "dependencies": {
+          "Faker": "1.2.0",
           "NLog": "5.1.4",
           "log4net": "2.0.15"
         },
         "runtime": {
-          "Exercise_1.dll": {}
+          "Exercise_2.dll": {}
+        }
+      },
+      "Faker/1.2.0": {
+        "runtime": {
+          "lib/Faker.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "log4net/2.0.15": {
@@ -88,10 +97,17 @@
     }
   },
   "libraries": {
-    "Exercise_1/1.0.0": {
+    "Exercise_2/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Faker/1.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-FvYt17xHV8R0DGb3O5scLtiWK8RrBuG0feDAWuzdM1l1bS62JOuhNgf4BgJthGFYZrEMKoU5XgCODLtXpS0cvw==",
+      "path": "faker/1.2.0",
+      "hashPath": "faker.1.2.0.nupkg.sha512"
     },
     "log4net/2.0.15": {
       "type": "package",
