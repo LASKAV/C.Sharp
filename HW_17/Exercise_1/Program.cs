@@ -9,37 +9,20 @@ using NLog.Conditions;
 
 
 
+
 /*
-                            Задание 2:
-Создайте приложение для генерации фейковых пользователей.
-У каждого пользователя должна быть такая информация:
-
- Имя
- Фамилия
- Контактный телефон
- Email
- Адрес
-
-Генерация фейковых пользователей должна быть оформлена
-в виде класса. Фактически нужно создать класс для
-генерации фейкового пользователя.
-
-Напишите код для тестирования фейковых пользователей
-В программе настройте логирование с использованием Serialog.
+                            Задание 1:
+Создайте приложение для поиска информации в файле по текстовому шаблону.
+Варианты поддерживаемых шаблонов:
+ Отобразить все предложения, содержащие хотя бы одну маленькую, английскую букву
+ Отобразить все предложения, содержащие хотя бы одну цифру
+ Отобразить все предложения, содержащие хотя бы одну большую, английскою букву
+В программе настройте логирование с использованием NLog.
 
  */
 
 namespace Exercise_1
 {
-
-    public class User
-    {
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string Phone { get; set; }
-        public string Email { get; set; }
-        public string Address { get; set; }
-    }
 
     class Program
     {
@@ -47,38 +30,6 @@ namespace Exercise_1
 
         static void Main(string[] args)
         {
-            User user1 = new User
-            {
-                FirstName = "John",
-                LastName = "Doe",
-                Phone = "123-456-7890",
-                Email = "john.doe@example.com",
-                Address = "123 Main Street"
-            };
-
-            User user2 = new User
-            {
-                FirstName = "Jane",
-                LastName = "Smith",
-                Phone = "987-654-3210",
-                Email = "jane.smith@example.com",
-                Address = "456 Elm Street"
-            };
-
-            User user3 = new User
-            {
-                FirstName = "Bob",
-                LastName = "Johnson",
-                Phone = "555-123-4567",
-                Email = "bob.johnson@example.com",
-                Address = "789 Oak Avenue"
-            };
-
-            List<User> fakeUser = new List<User>();
-            fakeUser.Add(user1);
-            fakeUser.Add(user2);
-            fakeUser.Add(user3);
-
             var config = new NLog.Config.LoggingConfiguration();
 
             //-------------------- Target Console ----------------------------------------
@@ -95,6 +46,8 @@ namespace Exercise_1
             // Apply config
             NLog.LogManager.Configuration = config;
 
+            #region NLog Colors
+
             var Trace = new ConsoleRowHighlightingRule();
             Trace.Condition = ConditionParser.ParseExpression("level == LogLevel.Trace");
             Trace.ForegroundColor = ConsoleOutputColor.Yellow;
@@ -107,18 +60,94 @@ namespace Exercise_1
             Info.Condition = ConditionParser.ParseExpression("level == LogLevel.Info");
             Info.ForegroundColor = ConsoleOutputColor.Green;
             consoleTarget.RowHighlightingRules.Add(Info);
+            var Warn = new ConsoleRowHighlightingRule();
+            Warn.Condition = ConditionParser.ParseExpression("level == LogLevel.Warn");
+            Warn.ForegroundColor = ConsoleOutputColor.DarkYellow;
+            consoleTarget.RowHighlightingRules.Add(Warn);
+            var Error = new ConsoleRowHighlightingRule();
+            Error.Condition = ConditionParser.ParseExpression("level == LogLevel.Error");
+            Error.ForegroundColor = ConsoleOutputColor.DarkRed;
+            consoleTarget.RowHighlightingRules.Add(Error);
+            var Fatal = new ConsoleRowHighlightingRule();
+            Fatal.Condition = ConditionParser.ParseExpression("level == LogLevel.Fatal");
+            Fatal.ForegroundColor = ConsoleOutputColor.Black;
+            Fatal.BackgroundColor = ConsoleOutputColor.DarkRed;
+            consoleTarget.RowHighlightingRules.Add(Fatal);
 
-            Logger.Info($"Старт генерации пользователей");
+            #endregion NLog Colors
 
-            for (int i = 0; i < 3; i++)
-            {
-                Logger.Debug($"Сгенерирован пользователь: @{fakeUser[i].FirstName}");
-            }
+            string nameFile = "Mytxt.txt";
+            string myText = "THE 123.ААА a";
 
-            Logger.Info("Генерация фейковых пользователей завершена");
+            RecordFile(myText, nameFile);
+            DataFiltering(nameFile);
 
             Console.ReadLine();
         }
+        static void DataFiltering(string nameFile)
+        {
+            try
+            {
+                Logger.Info("Начало фильтрации");
+                Logger.Info($"{nameFile} открыт");
+
+                string content = File.ReadAllText(nameFile);
+                string[] sentences = content.Split('.');
+
+                Console.WriteLine("Отобразить все предложения, содержащие хотя бы одну маленькую, английскую букву");
+                foreach (string sentence in sentences)
+                {
+                    if (sentence.Any(char.IsLower))
+                    {
+                        Console.WriteLine(sentence);
+                    }
+                }
+
+                Console.WriteLine("Отобразить все предложения, содержащие хотя бы одну цифру");
+                foreach (string sentence in sentences)
+                {
+                    if (sentence.Any(char.IsDigit))
+                    {
+                        Console.WriteLine(sentence);
+                    }
+                }
+
+                Console.WriteLine("Отобразить все предложения, содержащие хотя бы одну большую, английскую букву");
+                foreach (string sentence in sentences)
+                {
+                    if (sentence.Any(char.IsUpper))
+                    {
+                        Console.WriteLine(sentence);
+                    }
+                }
+
+                Logger.Info($"{nameFile} закрыт");
+            }
+            catch (FileNotFoundException)
+            {
+                Logger.Warn("Файл не найден");
+            }
+        }
+        static void RecordFile(string myText, string nameFile)
+        {
+            try
+            {
+                Logger.Info($"{nameFile} открыт");
+
+                using (StreamWriter fileWriter = new StreamWriter(nameFile))
+                {
+                    Logger.Info("Запись в файл");
+                    fileWriter.Write(myText);
+                }
+
+                Logger.Info($"{nameFile} закрыт");
+            }
+            catch (FileNotFoundException)
+            {
+                Logger.Warn("Файл не найден");
+            }
+        }
+
 
     }
 }
